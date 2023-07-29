@@ -66,8 +66,13 @@ public class BlockTrafficSign extends Block
     private IIcon signRectangle[] = new IIcon[Reference.maxSignRectangle];
     private IIcon signMisc[] = new IIcon[Reference.maxSignMisc];
     private IIcon signMiscB[] = new IIcon[Reference.maxSignMiscB];
-
-    private IIcon signPost, signBase, signError;
+    private IIcon signLetter[] = new IIcon[Reference.maxSignLetter];
+    private IIcon signLetterB[] = new IIcon[Reference.maxSignLetterB];
+    private IIcon signTrain[] = new IIcon[Reference.maxSignTrain];
+    private IIcon signTrainB[] = new IIcon[Reference.maxSignTrainB];
+    private IIcon signSpeed[] = new IIcon[Reference.maxSignSpeed];
+    private IIcon signSpeedB[] = new IIcon[Reference.maxSignSpeedB];
+    private IIcon signPost, signBase, signError, Misc62a, Misc5Ba;
 
     public BlockTrafficSign()
     {
@@ -124,10 +129,36 @@ public class BlockTrafficSign extends Block
         {
             this.signMiscB[i] = iconRegister.registerIcon(RoadStuff.MODID + ":sign/misc/misc" + i + "B");
         }
+        for(int i = 0; i < Reference.maxSignLetter; i++)
+        {
+            this.signLetter[i] = iconRegister.registerIcon(RoadStuff.MODID + ":sign/letter/letter" + i);
+        }
+        for(int i = 0; i < Reference.maxSignLetterB; i++)
+        {
+            this.signLetterB[i] = iconRegister.registerIcon(RoadStuff.MODID + ":sign/letter/letter" + i + "B");
+        }
+        for(int i = 0; i < Reference.maxSignTrain; i++)
+        {
+            this.signTrain[i] = iconRegister.registerIcon(RoadStuff.MODID + ":sign/train/train" + i);
+        }
+        for(int i = 0; i < Reference.maxSignTrainB; i++)
+        {
+            this.signTrainB[i] = iconRegister.registerIcon(RoadStuff.MODID + ":sign/train/train" + i + "B");
+        }
+        for(int i = 0; i < Reference.maxSignSpeed; i++)
+        {
+            this.signSpeed[i] = iconRegister.registerIcon(RoadStuff.MODID + ":sign/speed/speed" + i);
+        }
+        for(int i = 0; i < Reference.maxSignSpeedB; i++)
+        {
+            this.signSpeedB[i] = iconRegister.registerIcon(RoadStuff.MODID + ":sign/speed/speed" + i + "B");
+        }
 
         this.signPost = iconRegister.registerIcon(RoadStuff.MODID + ":sign/signPost");
         this.signBase = iconRegister.registerIcon(RoadStuff.MODID + ":sign/signBase");
         this.signError = iconRegister.registerIcon(RoadStuff.MODID + ":sign/signError");
+        this.Misc62a = iconRegister.registerIcon(RoadStuff.MODID + ":sign/misc/misc62a");
+        this.Misc5Ba = iconRegister.registerIcon(RoadStuff.MODID + ":sign/misc/misc5Ba");
     }
 
     public IIcon getIcon(int side, int metadata)
@@ -179,6 +210,7 @@ public class BlockTrafficSign extends Block
                 {
                     short type = ((TileEntityBlockTrafficSign)tile).getSignType();
                     byte shape = ((TileEntityBlockTrafficSign)tile).getSignShape();
+                    short direction = ((TileEntityBlockTrafficSign)tile).getSignDirection();
                     if(side == signBack)
                     {
                         if(type == 0)
@@ -187,31 +219,75 @@ public class BlockTrafficSign extends Block
                     }
                     if(shape == 5)
                     {
-                        if(type < 5)
+                        if(type < 2)
                             return this.signMiscB[1];
-                        if(type >= 5 && type <= 8)
+                        if(type >= 2 && type <= 3)
                             return this.signMiscB[2];
-                        if(type >= 9 && type <= 32)
+                        if(type >= 4 && type <= 45)
                             return this.signMiscB[3];
-                        if(type >= 33 && type <= 40)
+                        if(type >= 46 && type <= 61)
                             return this.signMiscB[4];
-                        if(type >= 41 && type <= 45)
+                        if(type == 62 && (direction == 0 || direction == 1))
                             return this.signMiscB[5];
-                        if(type >= 46 && type <= 47)
+                        if(type == 62 && (direction == 2 || direction == 3))
+                            return this.Misc5Ba;
+                        /*if(type == 62)
+                            return this.signMiscB[5];*/
+                        if(type > 62)
                             return this.signMiscB[6];
-                        if(type >= 48 && type <= 50)
-                            return this.signMiscB[7];
-                        if(type > 50)
-                            return this.signMiscB[8];
+                    }
+                    if(shape == 6)
+                    {
+                        if(type < 73)
+                            return this.signLetterB[1];
+                        if(type >= 73)
+                            return this.signLetterB[2];
+                    }
+                    if(shape == 7)
+                    {
+                        if(type < 7)
+                            return this.signTrainB[1];
+                        if(type >= 7 && type <= 8)
+                            return this.signTrainB[2];
+                        if(type == 9)
+                            return this.signTrainB[3];
+                        if(type >= 10 && type <= 22)
+                            return this.signTrainB[4];
+                        if(type >= 23 && type <= 42)
+                            return this.signTrainB[5];
+                        if(type >= 43 && type <= 53)
+                            return this.signTrainB[6];
+                        if(type == 54)
+                            return this.signTrainB[7];
+                        if(type == 55)
+                            return this.signTrainB[8];
+                        if(type >= 56 && type <= 59)
+                            return this.signTrainB[9];
+                        if(type == 60)
+                            return this.signTrainB[10];
+                        if(type == 61)
+                            return this.signTrainB[11];
+                        if(type > 61)
+                            return this.signTrainB[12];
+                    }
+                    if(shape == 8)
+                    {
+                        if(type < 69)
+                            return this.signSpeedB[1];
+                        if(type >= 69)
+                            return this.signSpeedB[2];
                     }
                 }
                 if(side == signFace)
                 {
                     short type = ((TileEntityBlockTrafficSign)tile).getSignType();
                     byte shape = ((TileEntityBlockTrafficSign)tile).getSignShape();
-
+                    short direction = ((TileEntityBlockTrafficSign)tile).getSignDirection();
+ 
                     if(type == 0)
                         return this.signBase;
+                /*if(shape == 5 && type == 62 && (direction == 2 || direction == 3))
+                        return this.Misc62a;*/
 
                     switch(shape)
                     {
@@ -227,6 +303,12 @@ public class BlockTrafficSign extends Block
                             return this.signRectangle[type];
                         case 5:
                             return this.signMisc[type];
+                        case 6:
+                            return this.signLetter[type];
+                        case 7:
+                            return this.signTrain[type];
+                        case 8:
+                            return this.signSpeed[type];
                         default:
                             return this.signError;
                     }
@@ -252,7 +334,7 @@ public class BlockTrafficSign extends Block
         if(tile instanceof TileEntityBlockTrafficSign)
         {
             byte signColTop = 16;
-            if(((TileEntityBlockTrafficSign)tile).getSignShape() == 5 && ((TileEntityBlockTrafficSign)tile).getSignType() > 32 && ((TileEntityBlockTrafficSign)tile).getSignType() < 41 )
+            if(((TileEntityBlockTrafficSign)tile).getSignShape() == 5 && ((TileEntityBlockTrafficSign)tile).getSignType() > 45 && ((TileEntityBlockTrafficSign)tile).getSignType() < 62 )
                 signColTop = 8;
             
             switch(((TileEntityBlockTrafficSign)tile).getSignDirection())
