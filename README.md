@@ -39,4 +39,4 @@ Credits:
 - MinecraftForgeFrance (tutorials)
 - Minecraftforge.net (help)
 - CronosusCZ further developer for 1.7.10
-- Kofola45CZ for sign textures
+- Kofola45cz for sign textures
