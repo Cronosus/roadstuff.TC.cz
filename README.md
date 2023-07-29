@@ -29,8 +29,8 @@ Planned features by killermapper, on hold by us:
 - Probably more later
 
 Media can be found here for now: http://imgur.com/a/jCsZ7
-WIP thread on minecraftforums.net:
-http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2560685-wip-road-stuff-blocks-items-related-to-roads
+
+Traincraft.cz Discord: https://discord.gg/uQmxC7N
 
 Credits:
 
