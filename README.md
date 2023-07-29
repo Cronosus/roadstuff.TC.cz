@@ -21,7 +21,7 @@ Currently including:
 - Chisel support
 - English + Czech support
 
-![ScreewShowcase](http://killermapper.net/roadstuffmod/RoadStuffScreenShowcase01.jpg)
+![ScreewShowcase](https://i.imgur.com/u93SzK5.png)
 
 Planned features by killermapper, on hold by us:
 - More road versions (paved)
