@@ -1,5 +1,5 @@
 ![Logo](https://github.com/Cronosus/roadstuff.TC.cz/blob/1.7.10/src/main/resources/assets/roadstuff/textures/gui/logo.png)
-# Road Stuff, Trainctaft.cz editidion
+# Road Stuff, Trainctaft.cz editidion (Czech)
 A Minecraft MODification by KillerMapper, further developed by CronosusCZ with help of Kofola45CZ
 For Minecraft 1.7.10
 
