@@ -1,4 +1,4 @@
-![Logo](http://killermapper.net/roadstuffmod/RoadStuffLogo.png)
+![Logo](https://github.com/Cronosus/roadstuff.TC.cz/blob/1.7.10/src/main/resources/assets/roadstuff/textures/gui/logo.png)
 # Road Stuff
 A Minecraft MODification by KillerMapper
 For Minecraft 1.7.10
