@@ -1,0 +1,588 @@
+//General
+itemGroup.RoadStuff=Road Stuff
+
+//Items
+item.bitumen.itemBitumen.name=Zivice
+item.bitumen.itemLiquidBitumen.name=Tekuta zivice
+item.paint.name=Stetec na Debug
+item.ironPart.itemIronStick.name=Zelezna tycka
+item.ironPart.itemIronPlate.name=Zelezna deska
+
+//Concrete Blocks
+tile.concreteBlock.base.name=Blok betonu
+tile.concreteBlock.manhole.name=Blok betonu
+
+tile.concreteLine.simplewhiteline.name=Blok betonu
+tile.concreteLine.simpleyellowline.name=Blok betonu
+tile.concreteLine.largewhiteline.name=Blok betonu
+tile.concreteLine.largeyellowline.name=Blok betonu
+tile.concreteLine.doublewhiteline.name=Blok betonu
+tile.concreteLine.doubleyellowline.name=Blok betonu
+
+tile.concreteYCross.simplewhiteyrightcross.name=Blok betonu
+tile.concreteYCross.simplewhiteyleftcross.name=Blok betonu
+tile.concreteYCross.simplewhiteyfullcross.name=Blok betonu
+tile.concreteYCross.simplewhiteycross.name=Blok betonu
+
+tile.concreteXCross.simplewhitexsidecross.name=Blok betonu
+tile.concreteXCross.simplewhitexcornercross.name=Blok betonu
+tile.concreteXCross.simplewhitexdoublecross.name=Blok betonu
+tile.concreteXCross.simplewhitexcross.name=Blok betonu
+
+tile.concreteYCrossYellow.simpleyellowyrightcross.name=Blok betonu
+tile.concreteYCrossYellow.simpleyellowyleftcross.name=Blok betonu
+tile.concreteYCrossYellow.simpleyellowyfullcross.name=Blok betonu
+tile.concreteYCrossYellow.simpleyellowycross.name=Blok betonu
+
+tile.concreteXCrossYellow.simpleyellowxsidecross.name=Blok betonu
+tile.concreteXCrossYellow.simpleyellowxcornercross.name=Blok betonu
+tile.concreteXCrossYellow.simpleyellowxdoublecross.name=Blok betonu
+tile.concreteXCrossYellow.simpleyellowxcross.name=Blok betonu
+
+tile.concreteCorner.simplewhitecorner.name=Blok betonu
+tile.concreteCorner.doublewhitecorner.name=Blok betonu
+tile.concreteCorner.simpleyellowcorner.name=Blok betonu
+tile.concreteCorner.doubleyellowcorner.name=Blok betonu
+tile.concreteCorner2.largewhitecorner.name=Blok betonu
+tile.concreteCorner2.largeyellowcorner.name=Blok betonu
+
+tile.concreteCorner2.onesideddoublewhiteline.name=Blok betonu
+tile.concreteCorner2.onesideddoubleyellowline.name=Blok betonu
+tile.concreteCorner3.onesidedadoublewhitecorner.name=Blok betonu
+tile.concreteCorner3.onesidedadoubleyellowcorner.name=Blok betonu
+tile.concreteCorner3.onesidedbdoublewhitecorner.name=Blok betonu
+tile.concreteCorner3.onesidedbdoubleyellowcorner.name=Blok betonu
+
+tile.concreteArrow.whitearrow.name=Blok betonu
+tile.concreteArrow.yellowarrow.name=Blok betonu
+tile.concreteArrow.doublewhitearrow.name=Blok betonu
+tile.concreteArrow.doubleyellowarrow.name=Blok betonu
+tile.concreteArrow2.whitearrowright.name=Blok betonu
+tile.concreteArrow2.whitearrowleft.name=Blok betonu
+tile.concreteArrow2.yellowarrowright.name=Blok betonu
+tile.concreteArrow2.yellowarrowleft.name=Blok betonu
+
+tile.slabConcrete.base.name=Pulblok betonu
+tile.slabConcrete.manhole.name=Pulblok betonu
+
+tile.slabConcreteLine.simplewhiteline.name=Pulblok betonu
+tile.slabConcreteLine.doublewhiteline.name=Pulblok betonu
+tile.slabConcreteLine.simpleyellowline.name=Pulblok betonu
+tile.slabConcreteLine.doubleyellowline.name=Pulblok betonu
+
+tile.slabConcreteCorner.simplewhitecorner.name=Pulblok betonu
+tile.slabConcreteCornerDouble.doublewhitecorner.name=Pulblok betonu
+tile.slabConcreteCorner.simpleyellowcorner.name=Pulblok betonu
+tile.slabConcreteCornerDouble.doubleyellowcorner.name=Pulblok betonu
+
+//Asphalt Blocks
+tile.asphaltBlock.asphalt.name=Blok asfaltu
+tile.asphaltBlock.manhole.name=Blok asfaltu
+
+tile.asphaltManhole.asphaltmanhole3.name=Blok asfaltu
+tile.asphaltManhole.asphaltmanhole4.name=Blok asfaltu
+tile.asphaltManhole.asphaltmanhole5.name=Blok asfaltu
+tile.asphaltManhole.asphaltmanhole8.name=Blok asfaltu
+tile.asphaltManhole1.asphaltmanhole9.name=Blok asfaltu
+tile.asphaltManhole1.asphaltmanhole10.name=Blok asfaltu
+tile.asphaltManhole1.asphaltmanhole11.name=Blok asfaltu
+tile.asphaltManhole1.asphaltmanhole12.name=Blok asfaltu
+tile.asphaltManhole2.asphaltmanhole13.name=Blok asfaltu
+tile.asphaltManhole2.asphaltmanhole14.name=Blok asfaltu
+tile.asphaltManhole2.asphaltmanhole18.name=Blok asfaltu
+tile.asphaltManhole2.asphaltmanhole19.name=Blok asfaltu
+tile.asphaltManhole3.asphaltmanhole2.name=Blok asfaltu
+tile.asphaltManhole3.asphaltmanhole6.name=Blok asfaltu
+tile.asphaltManhole3.asphaltmanhole7.name=Blok asfaltu
+tile.asphaltManhole3.asphaltmanhole15.name=Blok asfaltu
+tile.asphaltManhole3.asphaltmanhole16.name=Blok asfaltu
+tile.asphaltManhole3.asphaltmanhole17.name=Blok asfaltu
+
+tile.asphaltLine.simplewhiteline.name=Blok asfaltu
+tile.asphaltLine.simpleyellowline.name=Blok asfaltu
+tile.asphaltLine2.simplewhitelineC.name=Blok asfaltu
+tile.asphaltLine2.simpleyellowlineC.name=Blok asfaltu
+tile.asphaltLine.largewhiteline.name=Blok asfaltu
+tile.asphaltLine.largeyellowline.name=Blok asfaltu
+tile.asphaltLine2.largewhitelineC.name=Blok asfaltu
+tile.asphaltLine2.largeyellowlineC.name=Blok asfaltu
+tile.asphaltLine.doublewhiteline.name=Blok asfaltu
+tile.asphaltLine.doubleyellowline.name=Blok asfaltu
+tile.asphaltLine2.doublewhitelineC.name=Blok asfaltu
+tile.asphaltLine2.doubleyellowlineC.name=Blok asfaltu
+
+tile.asphaltLine4.linewithtwoarrows.name=Blok asfaltu
+tile.asphaltLine4.experiment0.name=Blok asfaltu
+tile.asphaltLine4.experiment1.name=Blok asfaltu
+tile.asphaltLine4.experiment2.name=Blok asfaltu
+tile.asphaltLine4.experiment3.name=Blok asfaltu
+tile.asphaltLine4.experiment4.name=Blok asfaltu
+tile.asphaltLine4.experiment5.name=Blok asfaltu
+tile.asphaltLine4.experiment6.name=Blok asfaltu
+tile.asphaltLine5.experiment7.name=Blok asfaltu
+tile.asphaltLine5.experiment8.name=Blok asfaltu
+tile.asphaltLine5.experiment9.name=Blok asfaltu
+tile.asphaltLine5.experiment10.name=Blok asfaltu
+tile.asphaltLine5.experiment12.name=Blok asfaltu
+tile.asphaltLine5.experiment13.name=Blok asfaltu
+tile.asphaltLine5.experiment14.name=Blok asfaltu
+tile.asphaltLine6.experiment15.name=Blok asfaltu
+tile.asphaltLine6.experiment16.name=Blok asfaltu
+tile.asphaltLine6.experiment17.name=Blok asfaltu
+tile.asphaltLine6.experiment19.name=Blok asfaltu
+tile.asphaltLine6.experiment20.name=Blok asfaltu
+tile.asphaltLine6.experiment21.name=Blok asfaltu
+tile.asphaltLine6.experiment24.name=Blok asfaltu
+tile.asphaltLine6.experiment25.name=Blok asfaltu
+
+tile.asphaltYCross.simplewhiteyrightcross.name=Blok asfaltu
+tile.asphaltYCross.simplewhiteyleftcross.name=Blok asfaltu
+tile.asphaltYCross.simplewhiteyfullcross.name=Blok asfaltu
+tile.asphaltYCross.simplewhiteycross.name=Blok asfaltu
+
+tile.asphaltYCross2.simplewhiteyfullcross2.name=Blok asfaltu
+tile.asphaltYCross2.simpleyellowyfullcross2.name=Blok asfaltu
+tile.asphaltYCross2.doublewhiteslantline.name=Blok asfaltu
+tile.asphaltYCross2.doubleyellowslantline.name=Blok asfaltu
+
+tile.asphaltXCross.simplewhitexsidecross.name=Blok asfaltu
+tile.asphaltXCross.simplewhitexcornercross.name=Blok asfaltu
+tile.asphaltXCross.simplewhitexdoublecross.name=Blok asfaltu
+tile.asphaltXCross.simplewhitexcross.name=Blok asfaltu
+
+tile.asphaltYCrossYellow.simpleyellowyrightcross.name=Blok asfaltu
+tile.asphaltYCrossYellow.simpleyellowyleftcross.name=Blok asfaltu
+tile.asphaltYCrossYellow.simpleyellowyfullcross.name=Blok asfaltu
+tile.asphaltYCrossYellow.simpleyellowycross.name=Blok asfaltu
+
+tile.asphaltXCrossYellow.simpleyellowxsidecross.name=Blok asfaltu
+tile.asphaltXCrossYellow.simpleyellowxcornercross.name=Blok asfaltu
+tile.asphaltXCrossYellow.simpleyellowxdoublecross.name=Blok asfaltu
+tile.asphaltXCrossYellow.simpleyellowxcross.name=Blok asfaltu
+
+tile.asphaltCorner.simplewhitecorner.name=Blok asfaltu
+tile.asphaltCorner.doublewhitecorner.name=Blok asfaltu
+tile.asphaltCorner.simpleyellowcorner.name=Blok asfaltu
+tile.asphaltCorner.doubleyellowcorner.name=Blok asfaltu
+tile.asphaltCorner2.largewhitecorner.name=Blok asfaltu
+tile.asphaltCorner2.largeyellowcorner.name=Blok asfaltu
+
+tile.asphaltCorner2.onesideddoublewhiteline.name=Blok asfaltu
+tile.asphaltLine3.onesideddoublewhiteline1.name=Blok asfaltu
+tile.asphaltLine3.onesidedbdoublewhiteline1.name=Blok asfaltu
+tile.asphaltLine3.onesideddoublewhiteline2.name=Blok asfaltu
+tile.asphaltLine3.onesidedbdoublewhiteline2.name=Blok asfaltu
+tile.asphaltCorner2.onesideddoubleyellowline.name=Blok asfaltu
+tile.asphaltLine3.onesideddoubleyellowline1.name=Blok asfaltu
+tile.asphaltLine3.onesidedbdoubleyellowline1.name=Blok asfaltu
+tile.asphaltLine3.onesideddoubleyellowline2.name=Blok asfaltu
+tile.asphaltLine3.onesidedbdoubleyellowline2.name=Blok asfaltu
+tile.asphaltCorner3.onesidedadoublewhitecorner.name=Blok asfaltu
+tile.asphaltCorner3.onesidedadoubleyellowcorner.name=Blok asfaltu
+tile.asphaltCorner3.onesidedbdoublewhitecorner.name=Blok asfaltu
+tile.asphaltCorner3.onesidedbdoubleyellowcorner.name=Blok asfaltu
+
+tile.asphaltCorner4.maxbottomwhiteline.name=Blok asfaltu
+tile.asphaltCorner4.maxbottomyellowline.name=Blok asfaltu
+tile.asphaltCorner4.maxtopwhiteline.name=Blok asfaltu
+tile.asphaltCorner4.maxtopyellowline.name=Blok asfaltu
+tile.asphaltCorner5.maxleftwhiteline.name=Blok asfaltu
+tile.asphaltCorner5.maxleftyellowline.name=Blok asfaltu
+tile.asphaltCorner5.maxrightwhiteline.name=Blok asfaltu
+tile.asphaltCorner5.maxrightyellowline.name=Blok asfaltu
+
+tile.asphaltCorner6.experiment18.name=Blok asfaltu
+tile.asphaltCorner6.experiment22.name=Blok asfaltu
+tile.asphaltCorner6.experiment23.name=Blok asfaltu
+tile.asphaltCorner6.linewitharrowsmall.name=Blok asfaltu
+tile.asphaltCorner7.lefupsmallarrow.name=Blok asfaltu
+tile.asphaltCorner7.rightupsmallarrow.name=Blok asfaltu
+tile.asphaltCorner7.leftsmallarrow.name=Blok asfaltu
+tile.asphaltCorner7.rightsmallarrow.name=Blok asfaltu
+tile.asphaltCorner8.newwhitecorner.name=Blok asfaltu
+tile.asphaltCorner8.newyellowcorner.name=Blok asfaltu
+tile.asphaltCorner8.onesidedadoublewhiteline3.name=Blok asfaltu
+tile.asphaltCorner8.onesidedadoubleyellowline3.name=Blok asfaltu
+tile.asphaltCorner9.halfcircleline.name=Blok asfaltu
+tile.asphaltCorner9.halfdiamondline.name=Blok asfaltu
+tile.asphaltCorner9.halfdiamonflinesmall.name=Blok asfaltu
+
+tile.asphaltArrow.whitearrow.name=Blok asfaltu
+tile.asphaltArrow.yellowarrow.name=Blok asfaltu
+tile.asphaltArrow.doublewhitearrow.name=Blok asfaltu
+tile.asphaltArrow.doubleyellowarrow.name=Blok asfaltu
+tile.asphaltArrow2.whitearrowright.name=Blok asfaltu
+tile.asphaltArrow2.whitearrowleft.name=Blok asfaltu
+tile.asphaltArrow2.yellowarrowright.name=Blok asfaltu
+tile.asphaltArrow2.yellowarrowleft.name=Blok asfaltu
+
+tile.slabAsphalt.base.name=Pulblok asfaltu
+tile.slabAsphalt.manhole.name=Pulblok asfaltu
+
+tile.slabAsphaltLine.simplewhiteline.name=Pulblok asfaltu
+tile.slabAsphaltLine.doublewhiteline.name=Pulblok asfaltu
+tile.slabAsphaltLine.simpleyellowline.name=Pulblok asfaltu
+tile.slabAsphaltLine.doubleyellowline.name=Pulblok asfaltu
+
+tile.slabAsphaltCorner.simplewhitecorner.name=Pulblok asfaltu
+tile.slabAsphaltCornerDouble.doublewhitecorner.name=Pulblok asfaltu
+tile.slabAsphaltCorner.simpleyellowcorner.name=Pulblok asfaltu
+tile.slabAsphaltCornerDouble.doubleyellowcorner.name=Pulblok asfaltu
+
+tile.asphaltWord1.wordex.name=Blok asfaltu
+tile.asphaltWord1.wordit.name=Blok asfaltu
+tile.asphaltWord1.wordst.name=Blok asfaltu
+tile.asphaltWord1.wordop.name=Blok asfaltu
+tile.asphaltWord2.wordtr.name=Blok asfaltu
+tile.asphaltWord2.wordam.name=Blok asfaltu
+tile.asphaltWord2.wordbu.name=Blok asfaltu
+tile.asphaltWord2.words.name=Blok asfaltu
+tile.asphaltWord3.wordb.name=Blok asfaltu
+tile.asphaltWord3.wordus.name=Blok asfaltu
+tile.asphaltWord3.wordcone.name=Blok asfaltu
+tile.asphaltWord3.wordinval.name=Blok asfaltu
+tile.asphaltWord4.word0a.name=Blok asfaltu
+tile.asphaltWord4.word0b.name=Blok asfaltu
+tile.asphaltWord4.word0c.name=Blok asfaltu
+tile.asphaltWord4.word0l.name=Blok asfaltu
+tile.asphaltWord5.word0n.name=Blok asfaltu
+tile.asphaltWord5.word0p.name=Blok asfaltu
+tile.asphaltWord5.word0r.name=Blok asfaltu
+tile.asphaltWord5.word0s.name=Blok asfaltu
+tile.asphaltWord6.word0t.name=Blok asfaltu
+tile.asphaltWord6.worda.name=Blok asfaltu
+tile.asphaltWord6.wordar.name=Blok asfaltu
+tile.asphaltWord6.wordc.name=Blok asfaltu
+tile.asphaltWord7.wordci.name=Blok asfaltu
+tile.asphaltWord7.wordfi.name=Blok asfaltu
+tile.asphaltWord7.wordil.name=Blok asfaltu
+tile.asphaltWord7.wordinvalj.name=Blok asfaltu
+tile.asphaltWord8.wordl.name=Blok asfaltu
+tile.asphaltWord8.wordn.name=Blok asfaltu
+tile.asphaltWord8.wordna.name=Blok asfaltu
+tile.asphaltWord8.wordnab.name=Blok asfaltu
+tile.asphaltWord9.wordni.name=Blok asfaltu
+tile.asphaltWord9.wordop.name=Blok asfaltu
+tile.asphaltWord9.wordor.name=Blok asfaltu
+tile.asphaltWord9.wordow.name=Blok asfaltu
+tile.asphaltWord10.wordoz.name=Blok asfaltu
+tile.asphaltWord10.wordp.name=Blok asfaltu
+tile.asphaltWord10.wordpar.name=Blok asfaltu
+tile.asphaltWord10.wordpo.name=Blok asfaltu
+tile.asphaltWord11.wordr.name=Blok asfaltu
+tile.asphaltWord11.wordrt.name=Blok asfaltu
+tile.asphaltWord11.wordsh.name=Blok asfaltu
+tile.asphaltWord11.wordsl.name=Blok asfaltu
+tile.asphaltWord12.wordt.name=Blok asfaltu
+tile.asphaltWord12.wordta.name=Blok asfaltu
+tile.asphaltWord12.wordzo.name=Blok asfaltu
+tile.asphaltWord12.wordzob.name=Blok asfaltu
+
+//Cones
+tile.cone.cone01.name=Dopravni kuzel
+tile.cone.cone02.name=Velky dopravni kuzel
+tile.cone.cone03.name=Dopravni sloup
+
+//Signs
+tile.trafficSign.signpost.name=Sloup dopravni znacky
+tile.trafficSign.sign.name=Dopravni znacka
+
+tile.trafficLight.name=Dopravni svetla (WIP)
+
+//Ores
+tile.bitumenOre.name=Lozisko zivice
+tile.bitumenBlock.name=Blok zivice
+
+//Reflectors
+tile.reflector.whitereflector.name=Bily reflektor
+tile.reflector.yellowreflector.name=Zluty reflektor
+tile.reflector.illuminatedwhitereflector.name=Osvetleny bily reflektor
+tile.reflector.illuminatedyellowreflector.name=Osvetleny zluty reflektor
+
+//Debug
+tile.entitytest.number=Hodnota : %d
+tile.signdirection.number=Smer : %d
+tile.signshape.number=tvar : %d
+tile.signtype.number=Typ : %d
+
+//Achievements
+achievement.roadstuff_getbitumen=Road Miner
+achievement.roadstuff_getbitumen.desc=Posbirej nejakou zivici ve svete
+achievement.roadstuff_smeltbitumen=HotRod
+achievement.roadstuff_smeltbitumen.desc=Udelej v peci tekutou zivici
+achievement.roadstuff_craftasphalt=Road Trip
+achievement.roadstuff_craftasphalt.desc=Vyrob blok asfaltu
+achievement.roadstuff_craftconcrete=Harder Than Clay
+achievement.roadstuff_craftconcrete.desc=Vyrob blok betonu
+achievement.roadstuff_craftcone=Not A Video Player
+achievement.roadstuff_craftcone.desc=Vyrob dopravni kuzel
+achievement.roadstuff_craftasphaltline=Draw The Line
+achievement.roadstuff_craftasphaltline.desc=Vyrob blok asfaltu s carou
+achievement.roadstuff_craftconcreteline=Draw The Line (Concrete)
+achievement.roadstuff_craftconcreteline.desc=Vyrob blok betonu s carou
+achievement.roadstuff_craftasphaltcorner=Warning! Curves!
+achievement.roadstuff_craftasphaltcorner.desc=Vyrob blok asfaltu s rohovou carou
+achievement.roadstuff_craftconcretecorner=Warning! Curves! (Concrete)
+achievement.roadstuff_craftconcretecorner.desc=Vyrob blok betonu s rohovou carou
+achievement.roadstuff_craftasphaltslab=Make Some Slopes!
+achievement.roadstuff_craftasphaltslab.desc=Vyrob pulblok asfaltu
+achievement.roadstuff_craftconcreteslab=Make Some Slopes! (Concrete)
+achievement.roadstuff_craftconcreteslab.desc=Vyrob pulblok betonu
+achievement.roadstuff_craftsign=Wanna Show Something?
+achievement.roadstuff_craftsign.desc=Vyrob dopravni znacku
+achievement.roadstuff_configsign=Road Security
+achievement.roadstuff_configsign.desc=Uprav dopravni znacku
+achievement.roadstuff_craftreflector=Show The Path
+achievement.roadstuff_craftreflector.desc=Vyrob reflektor
+achievement.roadstuff_craftilluminatedreflector=Follow The Light
+achievement.roadstuff_craftilluminatedreflector.desc=Vyrob osvetleny reflektor
+
+//GUI
+gui.trafficsign.done=Hotovo
+gui.trafficsign.title=Uprav znacku
+gui.trafficsign.type=Typ
+gui.trafficsign.shape=Tvar
+
+//Block Descriptions
+desc.asphalt.1=Kanal
+desc.asphaltManhole.0=Kanal
+desc.asphaltManhole.1=Kanal
+desc.asphaltManhole.2=Kanal
+desc.asphaltManhole.3=Kanal
+desc.asphaltManhole1.0=Kanal
+desc.asphaltManhole1.1=Kanal
+desc.asphaltManhole1.2=Kanal
+desc.asphaltManhole1.3=Kanal
+desc.asphaltManhole2.0=Kanal
+desc.asphaltManhole2.1=Kanal
+desc.asphaltManhole2.2=Kanal
+desc.asphaltManhole2.3=Kanal
+desc.asphaltManhole3.0=Kanal
+desc.asphaltManhole3.1=Kanal
+desc.asphaltManhole3.2=Kanal
+desc.asphaltManhole3.3=Kanal
+desc.asphaltManhole3.4=Kanal
+desc.asphaltManhole3.5=Kanal
+
+desc.asphaltArrow.0=Bila sipka
+desc.asphaltArrow.1=Zluta sipka
+desc.asphaltArrow.2=Dvojita bila sipka
+desc.asphaltArrow.3=Dvojita zluta sipka
+desc.asphaltArrow2.0=Sklonena bila sipka
+desc.asphaltArrow2.1=Sklonena bila sipka
+desc.asphaltArrow2.2=Sklonena zluta sipka
+desc.asphaltArrow2.3=Sklonena zluta sipka
+desc.asphaltCorner.0=Prosta bila 45° cara
+desc.asphaltCorner.1=Prosta zluta 45° cara
+desc.asphaltCorner.2=Dvojita bila 45° cara
+desc.asphaltCorner.3=Dvojita zluta 45° cara
+desc.asphaltCorner2.0=Velka bila 45° cara
+desc.asphaltCorner2.1=Velka zluta 45° cara
+desc.asphaltCorner2.2=Posunuta bila cara
+desc.asphaltLine3.0=Posunuta bila cara
+desc.asphaltLine3.1=Posunuta bila cara
+desc.asphaltCorner2.3=Posunuta zluta cara
+desc.asphaltLine3.2=Posunuta zluta cara
+desc.asphaltLine3.3=Posunuta zluta cara
+desc.asphaltCorner3.0=Posunuta bila 45° cara (Ext)
+desc.asphaltCorner3.1=Posunuta zluta 45° cara (Ext)
+desc.asphaltCorner3.2=Posunuta bila 45° cara (In)
+desc.asphaltCorner3.3=Posunuta zluta 45° cara (In)
+desc.asphaltLine.0=Bila cara
+desc.asphaltLine2.0=Bila cara
+desc.asphaltLine.1=Zluta cara
+desc.asphaltLine2.1=Zluta cara
+desc.asphaltLine.2=Velka bila cara
+desc.asphaltLine2.2=Velka bila cara
+desc.asphaltLine.3=Velka zluta cara
+desc.asphaltLine2.3=Velka zluta cara
+desc.asphaltLine.4=Dvojita bila cara
+desc.asphaltLine2.4=Dvojita bila cara
+desc.asphaltLine.5=Dvojita zluta cara
+desc.asphaltLine2.5=Dvojita zluta cara
+
+desc.asphaltLine4.0=Bila cara s dvema sipkami
+desc.asphaltLine4.1=Dvojita cara po bocich
+desc.asphaltLine4.2=Dvojita cara po bocich
+desc.asphaltLine4.3=Dvojita cara po bocich s dvema sikmimy carami
+desc.asphaltLine4.4=Dvojita sikma cara
+desc.asphaltLine4.5=Dvojita cara po bocich s dvema sikmimy carami
+desc.asphaltLine4.6=Velka dvojita sikma cara
+desc.asphaltLine4.7=Dvojita cara po bocich s dvema velkymi sikmimy carami
+desc.asphaltLine5.0=Velka dvojita sikma cara
+desc.asphaltLine5.1=Dvojita cara po bocich s dvema velkymi sikmimy carami
+desc.asphaltLine5.2=Sikme cary
+desc.asphaltLine5.3=Dvojita cara po bocich s sikmymi carami
+desc.asphaltLine5.4=Dvojita cara po bocich s sikmimy carami
+desc.asphaltLine5.5=Dve cary tvaru pul diamantu
+desc.asphaltLine5.6=Dvojita cara po bocich s mnoha centrovanym sikmymi carami
+desc.asphaltLine6.0=Mnoho centrovanych sikmych car
+desc.asphaltLine6.1=Mnoho centrovanych sikmych car
+desc.asphaltLine6.2=Dvojita cara po bocich s mnoha centrovanym sikmymi carami
+desc.asphaltLine6.3=Blok asfaltu obarveny bilou
+desc.asphaltLine6.4=Blok asfaltu obarveny cervenou
+desc.asphaltLine6.5=Blok asfaltu obarveny modrou
+desc.asphaltLine6.6=Dve cary tvaru "Zebrik"
+desc.asphaltLine6.7=Dvojita sikma cara
+
+desc.asphaltCorner4.0=Max posunuta bila cara
+desc.asphaltCorner4.1=Max posunuta zluta cara
+desc.asphaltCorner4.2=Max posunuta bila cara
+desc.asphaltCorner4.3=Max posunuta zluta cara
+desc.asphaltCorner5.0=Max posunuta bila cara
+desc.asphaltCorner5.1=Max posunuta zluta cara
+desc.asphaltCorner5.2=Max posunuta bila cara
+desc.asphaltCorner5.3=Max posunuta zluta cara
+desc.asphaltCorner6.0=Dvojity Kuzel Znacka
+desc.asphaltCorner6.1=Trojuhelnikova Znacka
+desc.asphaltCorner6.2=Znacka dite
+desc.asphaltCorner6.3=Bila cara s sipkou
+desc.asphaltCorner7.0=Bila vlevo-zahnuta sipka
+desc.asphaltCorner7.1=Bila vpravo-zahnuta sipka
+desc.asphaltCorner7.2=Bila leva sipka
+desc.asphaltCorner7.3=Bila prava sipka
+desc.asphaltCorner8.0=Rohova bila cara
+desc.asphaltCorner8.1=Rohova zluta cara
+desc.asphaltCorner8.2=Posunuta bila cara
+desc.asphaltCorner8.3=Posunuta zluta cara
+desc.asphaltCorner9.0=Bila pulkruhova cara
+desc.asphaltCorner9.1=Pul diamantova cara
+desc.asphaltCorner9.2=Pul diamantova cara
+
+desc.asphaltWordExit.0=EX Znacka
+desc.asphaltWordExit.1=IT Znacka
+desc.asphaltWordExit.2=ST Znacka
+desc.asphaltWordExit.3=OP Znacka
+desc.asphaltWordExit2.0=TR Znacka
+desc.asphaltWordExit2.1=AM Znacka
+desc.asphaltWordExit2.2=BU Znacka
+desc.asphaltWordExit2.3=S Znacka (leva)
+desc.asphaltWordExit3.0=B Znacka (leva)
+desc.asphaltWordExit3.1=US Znacka
+desc.asphaltWordExit3.2=Kuzel Znacka
+desc.asphaltWordExit3.3=Invalid Znacka
+desc.asphaltWordExit4.0=A Znacka (prava)
+desc.asphaltWordExit4.1=B Znacka (prava)
+desc.asphaltWordExit4.2=C Znacka (prava)
+desc.asphaltWordExit4.3=L Znacka (prava)
+desc.asphaltWordExit5.0=N Znacka (prava)
+desc.asphaltWordExit5.1=P Znacka (prava)
+desc.asphaltWordExit5.2=R Znacka (prava)
+desc.asphaltWordExit5.3=S Znacka (prava)
+desc.asphaltWordExit6.0=T Znacka (prava)
+desc.asphaltWordExit6.1=A Znacka (leva)
+desc.asphaltWordExit6.2=AR Znacka
+desc.asphaltWordExit6.3=C Znacka (leva)
+desc.asphaltWordExit7.0=CI Znacka
+desc.asphaltWordExit7.1=FI Znacka
+desc.asphaltWordExit7.2=IL Znacka
+desc.asphaltWordExit7.3=Pravy Invalid Znacka
+desc.asphaltWordExit8.0=L Znacka (leva)
+desc.asphaltWordExit8.1=N Znacka (leva)
+desc.asphaltWordExit8.2=NA Znacka
+desc.asphaltWordExit8.3=Modra NA Znacka
+desc.asphaltWordExit9.0=NI Znacka
+desc.asphaltWordExit9.1=OP Znacka
+desc.asphaltWordExit9.2=OR Znacka
+desc.asphaltWordExit9.3=OW Znacka
+desc.asphaltWordExit10.0=OZ Znacka
+desc.asphaltWordExit10.1=P Znacka (leva)
+desc.asphaltWordExit10.2=Parkovani Znacka
+desc.asphaltWordExit10.3=PO Znacka
+desc.asphaltWordExit11.0=R Znacka (leva)
+desc.asphaltWordExit11.1=RT Znacka
+desc.asphaltWordExit11.2=SH Znacka
+desc.asphaltWordExit11.3=SL Znacka
+desc.asphaltWordExit12.0=T Znacka (leva)
+desc.asphaltWordExit12.1=TA Znacka
+desc.asphaltWordExit12.2=ZO Znacka
+desc.asphaltWordExit12.3=Modra ZO Znacka
+
+desc.asphaltXCross.0=Bile T krizeni
+desc.asphaltXCross.1=Bila 90° cara
+desc.asphaltXCross.2=Dvojite bile T krizeni
+desc.asphaltXCross.3=Bile X krizeni
+desc.asphaltXCrossYellow.0=Zlute T krizeni
+desc.asphaltXCrossYellow.1=Zluta 90° cara
+desc.asphaltXCrossYellow.2=Dvojite zlute T krizeni
+desc.asphaltXCrossYellow.3=zluta X krizeni
+desc.asphaltYCross.0=Y bila cara (vpravo)
+desc.asphaltYCross.1=Y bila cara (vlevo)
+desc.asphaltYCross.2=Y bila cara (plna)
+desc.asphaltYCross.3=Y bila cara (strany)
+desc.asphaltYCrossYellow.0=Y zluta cara (vpravo)
+desc.asphaltYCrossYellow.1=Y zluta cara (vlevo)
+desc.asphaltYCrossYellow.2=Y zluta cara (plna)
+desc.asphaltYCrossYellow.3=Y zluta cara (stred)
+desc.asphaltYCross2.0=U bila cara
+desc.asphaltYCross2.1=U zluta cara
+desc.asphaltYCross2.2=Bila sikma cara
+desc.asphaltYCross2.3=Bila sikma cara
+
+desc.slabAsphaltLine.0=Bila cara
+desc.slabAsphaltLine.1=Zluta cara
+desc.slabAsphaltLine.2=Dvojita bila cara
+desc.slabAsphaltLine.3=Dvojita zluta cara
+desc.slabAsphaltCorner.0=Prosta bila 45° cara
+desc.slabAsphaltCorner.1=Prosta zluta 45° cara
+desc.slabAsphaltCornerDouble.0=Dvojita bila 45° cara
+desc.slabAsphaltCornerDouble.1=Dvojita zluta 45° cara
+desc.slabAsphalt.1=Kanal
+
+desc.concrete.1=Kanal
+desc.concreteArrow.0=Bila sipka
+desc.concreteArrow.1=Zluta sipka
+desc.concreteArrow.2=Dvojita bila sipka
+desc.concreteArrow.3=Dvojita zluta sipka
+desc.concreteArrow2.0=Sklonena bila sipka
+desc.concreteArrow2.1=Sklonena bila sipka
+desc.concreteArrow2.2=Sklonena zluta sipka
+desc.concreteArrow2.3=Sklonena zluta sipka
+desc.concreteCorner.0=Prosta bila 45° cara
+desc.concreteCorner.1=Prosta zluta 45° cara
+desc.concreteCorner.2=Dvojita bila 45° cara
+desc.concreteCorner.3=Dvojita zluta 45° cara
+desc.concreteCorner2.0=Velka bila 45° cara
+desc.concreteCorner2.1=Velka zluta 45° cara
+desc.concreteCorner2.2=Posunuta bila cara
+desc.concreteCorner2.3=Posunuta zluta cara
+desc.concreteCorner3.0=Posunuta bila 45° cara (Ext)
+desc.concreteCorner3.1=Posunuta zluta 45° cara (Ext)
+desc.concreteCorner3.2=Posunuta bila 45° cara (In)
+desc.concreteCorner3.3=Posunuta zluta 45° cara (In)
+desc.concreteLine.0=Bila cara
+desc.concreteLine.1=Zluta cara
+desc.concreteLine.2=Velka bila cara
+desc.concreteLine.3=Velka zluta cara
+desc.concreteLine.4=Dvojita bila cara
+desc.concreteLine.5=Dvojita zluta cara
+desc.concreteWordExit.0=EX Znacka
+desc.concreteWordExit.1=IT Znacka
+desc.concreteWordExit.2=ST Znacka
+desc.concreteWordExit.3=OP Znacka
+desc.concreteXCross.0=Bile T krizeni
+desc.concreteXCross.1=Bila 90° cara
+desc.concreteXCross.2=Dvojite bile T krizeni
+desc.concreteXCross.3=Bile X krizeni
+desc.concreteXCrossYellow.0=Zlute T krizeni
+desc.concreteXCrossYellow.1=Zluta 90° cara
+desc.concreteXCrossYellow.2=Dvojite zlute T krizeni
+desc.concreteXCrossYellow.3=Zlute X krizeni
+desc.concreteYCross.0=Y bila cara (vpravo)
+desc.concreteYCross.1=Y bila cara (vlevo)
+desc.concreteYCross.2=Y bila cara (plna)
+desc.concreteYCross.3=Y bila cara (strany)
+desc.concreteYCrossYellow.0=Y zluta cara (vpravo)
+desc.concreteYCrossYellow.1=Y zluta cara (vlevo)
+desc.concreteYCrossYellow.2=Y zluta cara (plna)
+desc.concreteYCrossYellow.3=Y zluta cara (stred)
+
+desc.slabConcreteLine.0=Bila cara
+desc.slabConcreteLine.1=Zluta cara
+desc.slabConcreteLine.2=Dvojita bila cara
+desc.slabConcreteLine.3=Dvojita zluta cara
+desc.slabConcreteCorner.0=Prosta bila 45° cara
+desc.slabConcreteCorner.1=Prosta zluta 45° cara
+desc.slabConcreteCornerDouble.0=Dvojita bila 45° cara
+desc.slabConcreteCornerDouble.1=Dvojita zluta 45° cara
+desc.slabConcrete.1=Kanal
