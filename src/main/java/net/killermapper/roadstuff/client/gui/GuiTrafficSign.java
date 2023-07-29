@@ -62,6 +62,9 @@ public class GuiTrafficSign extends GuiScreen
     short maxSignTriangle = Reference.maxSignTriangle - 1;
     short maxSignRectangle = Reference.maxSignRectangle - 1;
     short maxSignMisc = Reference.maxSignMisc - 1;
+    short maxSignLetter = Reference.maxSignLetter - 1;
+    short maxSignTrain = Reference.maxSignTrain - 1;
+    short maxSignSpeed = Reference.maxSignSpeed - 1;
 
     byte currentShape = 0;
 
@@ -95,8 +98,8 @@ public class GuiTrafficSign extends GuiScreen
         this.drawDefaultBackground();
 
         mc.getTextureManager().bindTexture(textures);
-        drawTexturedModalRect(width / 2 - 9, height / 2 + 0, 0, 256, 32, 256);
-        drawTexturedModalRect(width / 2 - 100, height / 2 + 84, 16, 0, 39, 21);
+        /*drawTexturedModalRect(width / 2 - 11, height / 2 + 0, 0, 256, 32, 320);  sloupek*/
+        drawTexturedModalRect(width / 2 - 100, height / 2 + 84, 13, 0, 25, 25);    /*logo*/
         GL11.glColor4f(0.0F, 0.0F, 0.0F, 1.0F);
         drawString(fontRendererObj, I18n.format("gui.trafficsign.title"), (width - fontRendererObj.getStringWidth(I18n.format("gui.trafficsign.title"))) / 2, height / 2 - 114, 16777215);
         drawString(fontRendererObj, I18n.format("gui.trafficsign.type") + " : " + currentType, (width - fontRendererObj.getStringWidth(I18n.format("gui.trafficsign.type")) - 16) / 2, height / 2 - 50, 16777215);
@@ -134,8 +137,25 @@ public class GuiTrafficSign extends GuiScreen
             mc.renderEngine.bindTexture(new ResourceLocation(RoadStuff.MODID, "textures/blocks/sign/misc/misc" + currentType + ".png"));
             func_152125_a(width / 2 - 48, height / 2 - 32, 0, 0, 1, 1, 100, 100, 1, 1);
         }
+        if(currentShape == 6)
+        {
+            mc.renderEngine.bindTexture(new ResourceLocation(RoadStuff.MODID, "textures/blocks/sign/letter/letter" + currentType + ".png"));
+            func_152125_a(width / 2 - 48, height / 2 - 32, 0, 0, 1, 1, 100, 100, 1, 1);
+        }
+        if(currentShape == 7)
+        {
+            mc.renderEngine.bindTexture(new ResourceLocation(RoadStuff.MODID, "textures/blocks/sign/train/train" + currentType + ".png"));
+            func_152125_a(width / 2 - 48, height / 2 - 32, 0, 0, 1, 1, 100, 100, 1, 1);
+        }
+        if(currentShape == 8)
+        {
+            mc.renderEngine.bindTexture(new ResourceLocation(RoadStuff.MODID, "textures/blocks/sign/speed/speed" + currentType + ".png"));
+            func_152125_a(width / 2 - 48, height / 2 - 32, 0, 0, 1, 1, 100, 100, 1, 1);
+        }
         mc.getTextureManager().bindTexture(textures);
-        drawTexturedModalRect(width / 2 - 16, height / 2 - 88, currentShape * 32 + 64, 0, 32, 32);
+        /*posun sign shape: poz vodorovne,poz svisle, sirka posunu + pocatecni pozice, vyska, rozmer x, rozmer y*/
+        /*drawTexturedModalRect(width / 2 - 16, height / 2 - 88, currentShape * 32 + 64, 0, 32, 32);*/
+        drawTexturedModalRect(width / 2 - 16, height / 2 - 88, currentShape * 23 + 40, 0, 26, 32);   
         super.drawScreen(mouseX, mouseY, partialTicks);
     }
 
@@ -207,18 +227,36 @@ public class GuiTrafficSign extends GuiScreen
                 else if(currentType > maxSignMisc)
                     currentType = 0;
                 break;
+            case 6:
+                if(currentType < 0)
+                    currentType = maxSignLetter;
+                else if(currentType > maxSignLetter)
+                    currentType = 0;
+                break;
+            case 7:
+                if(currentType < 0)
+                    currentType = maxSignTrain;
+                else if(currentType > maxSignTrain)
+                    currentType = 0;
+                break;
+            case 8:
+                if(currentType < 0)
+                    currentType = maxSignSpeed;
+                else if(currentType > maxSignSpeed)
+                    currentType = 0;
+                break;
         }
 
         if(currentShape < 0)
-            currentShape = 5;
-        else if(currentShape > 5)
+            currentShape = 8;
+        else if(currentShape > 8)
             currentShape = 0;
 
         if(RoadStuffConfig.enableDebug)
         {
             System.out.println("Current selected type: " + currentType);
             System.out.println("Current selected shape: " + currentShape);
-            System.out.println("Signs: " + maxSignDiamond + " " + maxSignTriangle + " " + maxSignCircle + " " + maxSignSquare + " " + maxSignRectangle + " " + maxSignMisc);
+            System.out.println("Signs: " + maxSignDiamond + " " + maxSignTriangle + " " + maxSignCircle + " " + maxSignSquare + " " + maxSignRectangle + " " + maxSignMisc + " "  + maxSignLetter + " " + maxSignTrain + " " + maxSignSpeed);
         }
     }
 
