@@ -73,7 +73,7 @@ public class ItemBlockTrafficSign extends ItemBlock
         int metadata = stack.getItemDamage();
         if(metadata == 1)
         {
-            list.add("Right-click to configure it.");
+            list.add("Klikni pravym pro upravu.");
         }
     }
 
