@@ -43,13 +43,13 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockAsphaltCorner3 extends Block
+public class BlockAsphaltCorner9 extends Block
 {
 
-    public static String[] subBlock = new String[] {"onesidedadoublewhitecorner", "onesidedadoubleyellowcorner", "onesidedbdoublewhitecorner", "onesidedbdoubleyellowcorner"};
-    private IIcon asphaltBase, oneSidedAdoubleWhiteCorner, oneSidedAdoubleYellowCorner, oneSidedBDoubleWhiteLine, oneSidedBDoubleYellowLine, oneSidedBDoubleWhiteLine1, oneSidedBDoubleWhiteLine2, oneSidedBDoubleYellowLine1, oneSidedBDoubleYellowLine2;
+    public static String[] subBlock = new String[] {"halfcircleline", "halfdiamondline", "halfdiamonflinesmall"};
+    private IIcon asphaltBase, halfCircleLine, halfDiamondLine, halfDiamonfLineSmall, Experiment0;
 
-    public BlockAsphaltCorner3()
+    public BlockAsphaltCorner9()
     {
         super(Material.rock);
         this.setCreativeTab(RoadStuff.RoadStuffCreativeTabs);
@@ -69,8 +69,6 @@ public class BlockAsphaltCorner3 extends Block
             return 1;
         if(metadata == 6 || metadata == 10 || metadata == 14)
             return 2;
-        if(metadata == 7 || metadata == 11 || metadata == 15)
-            return 3;
         return metadata;
     }
 
@@ -85,14 +83,10 @@ public class BlockAsphaltCorner3 extends Block
     public void registerBlockIcons(IIconRegister iconRegister)
     {
         this.asphaltBase = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphaltBase");
-        this.oneSidedAdoubleWhiteCorner = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1aDWC");
-        this.oneSidedAdoubleYellowCorner = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1aDYC");
-        this.oneSidedBDoubleWhiteLine = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1bDWC");
-        this.oneSidedBDoubleYellowLine = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1bDYC");
-        this.oneSidedBDoubleWhiteLine1 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DWLC");
-        this.oneSidedBDoubleWhiteLine2 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DWLC1");
-        this.oneSidedBDoubleYellowLine1 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DYLC");
-        this.oneSidedBDoubleYellowLine2 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DYLC1");
+        this.halfCircleLine = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphaltHCIRC");
+        this.halfDiamondLine = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphaltHTRI");
+        this.halfDiamonfLineSmall = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphaltHTRIS");
+        this.Experiment0 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphaltEXP0");
     }
 
     public IIcon getIcon(int side, int metadata)
@@ -101,95 +95,43 @@ public class BlockAsphaltCorner3 extends Block
         {
             if(metadata == 0 || metadata == 4 || metadata == 8 || metadata == 12)
             {
-                return this.oneSidedAdoubleWhiteCorner;
+                return this.halfCircleLine;
             }
             if(metadata == 1 || metadata == 5 || metadata == 9 || metadata == 13)
             {
-                return this.oneSidedAdoubleYellowCorner;
+                return this.halfDiamondLine;
             }
             if(metadata == 2 || metadata == 6 || metadata == 10 || metadata == 14)
             {
-                return this.oneSidedBDoubleWhiteLine;
-            }
-            if(metadata == 3 || metadata == 7 || metadata == 11 || metadata == 15)
-            {
-                return this.oneSidedBDoubleYellowLine;
+                return this.halfDiamonfLineSmall;
             }
         }
         if(side == 2)
         {
-            if(metadata == 8 || metadata == 14)
+            if(metadata == 8 || metadata == 9)
             {
-                return this.oneSidedBDoubleWhiteLine1;
-            }
-            if(metadata == 9 || metadata == 15)
-            {
-                return this.oneSidedBDoubleYellowLine2;
-            }
-            if(metadata == 10 || metadata == 12)
-            {
-                return this.oneSidedBDoubleWhiteLine2;
-            }
-            if(metadata == 11 || metadata == 13)
-            {
-                return this.oneSidedBDoubleYellowLine1;
+                return this.Experiment0;
             }
         }
         if(side == 3)
         {
-            if(metadata == 0 || metadata == 6)
+            if(metadata == 0 || metadata == 1)
             {
-                return this.oneSidedBDoubleWhiteLine1;
-            }
-            if(metadata == 1 || metadata == 7)
-            {
-                return this.oneSidedBDoubleYellowLine2;
-            }
-            if(metadata == 2 || metadata == 4)
-            {
-                return this.oneSidedBDoubleWhiteLine2;
-            }
-            if(metadata == 3 || metadata == 5)
-            {
-                return this.oneSidedBDoubleYellowLine1;
+                return this.Experiment0;
             }
         }
         if(side == 4)
         {
-            if(metadata == 4 || metadata == 10)
+            if(metadata == 4 || metadata == 5)
             {
-                return this.oneSidedBDoubleWhiteLine1;
-            }
-            if(metadata == 5 || metadata == 11)
-            {
-                return this.oneSidedBDoubleYellowLine2;
-            }
-            if(metadata == 6 || metadata == 8)
-            {
-                return this.oneSidedBDoubleWhiteLine2;
-            }
-            if(metadata == 7 || metadata == 9)
-            {
-                return this.oneSidedBDoubleYellowLine1;
+                return this.Experiment0;
             }
         }
         if(side == 5)
         {
-            if(metadata == 12 || metadata == 2)
+            if(metadata == 12 || metadata == 13)
             {
-                return this.oneSidedBDoubleWhiteLine1;
-            }
-            if(metadata == 13 || metadata == 3)
-            {
-                return this.oneSidedBDoubleYellowLine2;
-            }
-            if(metadata == 14 || metadata == 0)
-            {
-                return this.oneSidedBDoubleWhiteLine2;
-            }
-            if(metadata == 15 || metadata == 1)
-            {
-                return this.oneSidedBDoubleYellowLine1;
+                return this.Experiment0;
             }
         }
         return this.asphaltBase;
@@ -231,17 +173,6 @@ public class BlockAsphaltCorner3 extends Block
                 meta = 10;
             if(direction == 3)
                 meta = 14;
-        }
-        if(stack.getItemDamage() == 3)
-        {
-            if(direction == 0)
-                meta = 3;
-            if(direction == 1)
-                meta = 7;
-            if(direction == 2)
-                meta = 11;
-            if(direction == 3)
-                meta = 15;
         }
         world.setBlockMetadataWithNotify(x, y, z, meta, 2);
     }

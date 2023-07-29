@@ -43,13 +43,12 @@ import net.minecraft.util.IIcon;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BlockAsphaltCorner3 extends Block
+public class BlockAsphaltWordExit5 extends Block
 {
+    public static String[] subBlock = new String[] {"word0n", "word0p", "word0r" , "word0s"};
+    private IIcon asphaltBase, asphalt0N, asphalt0P, asphalt0R, asphalt0S;
 
-    public static String[] subBlock = new String[] {"onesidedadoublewhitecorner", "onesidedadoubleyellowcorner", "onesidedbdoublewhitecorner", "onesidedbdoubleyellowcorner"};
-    private IIcon asphaltBase, oneSidedAdoubleWhiteCorner, oneSidedAdoubleYellowCorner, oneSidedBDoubleWhiteLine, oneSidedBDoubleYellowLine, oneSidedBDoubleWhiteLine1, oneSidedBDoubleWhiteLine2, oneSidedBDoubleYellowLine1, oneSidedBDoubleYellowLine2;
-
-    public BlockAsphaltCorner3()
+    public BlockAsphaltWordExit5()
     {
         super(Material.rock);
         this.setCreativeTab(RoadStuff.RoadStuffCreativeTabs);
@@ -58,7 +57,7 @@ public class BlockAsphaltCorner3 extends Block
     @SideOnly(Side.CLIENT)
     public int getRenderType()
     {
-        return ClientProxy.renderAsphaltCornerId;
+        return ClientProxy.renderAsphaltArrowsId;
     }
 
     public int damageDropped(int metadata)
@@ -85,14 +84,10 @@ public class BlockAsphaltCorner3 extends Block
     public void registerBlockIcons(IIconRegister iconRegister)
     {
         this.asphaltBase = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphaltBase");
-        this.oneSidedAdoubleWhiteCorner = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1aDWC");
-        this.oneSidedAdoubleYellowCorner = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1aDYC");
-        this.oneSidedBDoubleWhiteLine = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1bDWC");
-        this.oneSidedBDoubleYellowLine = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1bDYC");
-        this.oneSidedBDoubleWhiteLine1 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DWLC");
-        this.oneSidedBDoubleWhiteLine2 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DWLC1");
-        this.oneSidedBDoubleYellowLine1 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DYLC");
-        this.oneSidedBDoubleYellowLine2 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DYLC1");
+        this.asphalt0N = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt0N");
+        this.asphalt0P = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt0P");
+        this.asphalt0R = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt0R");
+        this.asphalt0S = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt0S");
     }
 
     public IIcon getIcon(int side, int metadata)
@@ -101,97 +96,21 @@ public class BlockAsphaltCorner3 extends Block
         {
             if(metadata == 0 || metadata == 4 || metadata == 8 || metadata == 12)
             {
-                return this.oneSidedAdoubleWhiteCorner;
+                return this.asphalt0N;
             }
             if(metadata == 1 || metadata == 5 || metadata == 9 || metadata == 13)
             {
-                return this.oneSidedAdoubleYellowCorner;
+                return this.asphalt0P;
             }
             if(metadata == 2 || metadata == 6 || metadata == 10 || metadata == 14)
             {
-                return this.oneSidedBDoubleWhiteLine;
+                return this.asphalt0R;
             }
             if(metadata == 3 || metadata == 7 || metadata == 11 || metadata == 15)
             {
-                return this.oneSidedBDoubleYellowLine;
+                return this.asphalt0S;
             }
-        }
-        if(side == 2)
-        {
-            if(metadata == 8 || metadata == 14)
-            {
-                return this.oneSidedBDoubleWhiteLine1;
-            }
-            if(metadata == 9 || metadata == 15)
-            {
-                return this.oneSidedBDoubleYellowLine2;
-            }
-            if(metadata == 10 || metadata == 12)
-            {
-                return this.oneSidedBDoubleWhiteLine2;
-            }
-            if(metadata == 11 || metadata == 13)
-            {
-                return this.oneSidedBDoubleYellowLine1;
-            }
-        }
-        if(side == 3)
-        {
-            if(metadata == 0 || metadata == 6)
-            {
-                return this.oneSidedBDoubleWhiteLine1;
-            }
-            if(metadata == 1 || metadata == 7)
-            {
-                return this.oneSidedBDoubleYellowLine2;
-            }
-            if(metadata == 2 || metadata == 4)
-            {
-                return this.oneSidedBDoubleWhiteLine2;
-            }
-            if(metadata == 3 || metadata == 5)
-            {
-                return this.oneSidedBDoubleYellowLine1;
-            }
-        }
-        if(side == 4)
-        {
-            if(metadata == 4 || metadata == 10)
-            {
-                return this.oneSidedBDoubleWhiteLine1;
-            }
-            if(metadata == 5 || metadata == 11)
-            {
-                return this.oneSidedBDoubleYellowLine2;
-            }
-            if(metadata == 6 || metadata == 8)
-            {
-                return this.oneSidedBDoubleWhiteLine2;
-            }
-            if(metadata == 7 || metadata == 9)
-            {
-                return this.oneSidedBDoubleYellowLine1;
-            }
-        }
-        if(side == 5)
-        {
-            if(metadata == 12 || metadata == 2)
-            {
-                return this.oneSidedBDoubleWhiteLine1;
-            }
-            if(metadata == 13 || metadata == 3)
-            {
-                return this.oneSidedBDoubleYellowLine2;
-            }
-            if(metadata == 14 || metadata == 0)
-            {
-                return this.oneSidedBDoubleWhiteLine2;
-            }
-            if(metadata == 15 || metadata == 1)
-            {
-                return this.oneSidedBDoubleYellowLine1;
-            }
-        }
+       }
         return this.asphaltBase;
     }
 

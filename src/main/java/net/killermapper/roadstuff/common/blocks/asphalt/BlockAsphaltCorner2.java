@@ -47,7 +47,7 @@ public class BlockAsphaltCorner2 extends Block
 {
 
     public static String[] subBlock = new String[] {"largewhitecorner", "largeyellowcorner", "onesideddoublewhiteline", "onesideddoubleyellowline"};
-    private IIcon asphaltBase, largeWhiteCorner, largeYellowCorner, largeWhiteLine, largeYellowLine, oneSidedDoubleWhiteLine, oneSidedDoubleYellowLine;
+    private IIcon asphaltBase, largeWhiteCorner, largeYellowCorner, largeWhiteLine, largeYellowLine, oneSidedDoubleWhiteLine, oneSidedDoubleYellowLine, oneSidedBDoubleWhiteLine1, oneSidedBDoubleWhiteLine2, oneSidedBDoubleYellowLine1, oneSidedBDoubleYellowLine2;
 
     public BlockAsphaltCorner2()
     {
@@ -91,6 +91,10 @@ public class BlockAsphaltCorner2 extends Block
         this.largeYellowLine = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphaltLYL");
         this.oneSidedDoubleWhiteLine = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DWL");
         this.oneSidedDoubleYellowLine = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DYL");
+        this.oneSidedBDoubleWhiteLine1 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DWLC");
+        this.oneSidedBDoubleWhiteLine2 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DWLC1");
+        this.oneSidedBDoubleYellowLine1 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DYLC");
+        this.oneSidedBDoubleYellowLine2 = iconRegister.registerIcon(RoadStuff.MODID + ":asphalt/asphalt1DYLC1");
     }
 
     public IIcon getIcon(int side, int metadata)
@@ -114,48 +118,112 @@ public class BlockAsphaltCorner2 extends Block
                 return this.oneSidedDoubleYellowLine;
             }
         }
-        if(side == 3 || side == 5)
+        if(side == 2)
         {
-            if(metadata == 0)
+            if(metadata == 8 || metadata == 12)
             {
                 return this.largeWhiteLine;
             }
-            if(metadata == 1)
+            if(metadata == 9 || metadata == 13)
             {
                 return this.largeYellowLine;
+            }
+            if(metadata == 2)
+            {
+                return this.oneSidedBDoubleWhiteLine2;
+            }
+            if(metadata == 10)
+            {
+                return this.oneSidedBDoubleWhiteLine1;
+            }
+            if(metadata == 3)
+            {
+                return this.oneSidedBDoubleYellowLine1;
+            }
+            if(metadata == 11)
+            {
+                return this.oneSidedBDoubleYellowLine2;
             }
         }
-        if(side == 3 || side == 4)
+        if(side == 3)
         {
-            if(metadata == 4)
+            if(metadata == 0 || metadata == 4)
             {
                 return this.largeWhiteLine;
             }
-            if(metadata == 5)
+            if(metadata == 1 || metadata == 5)
             {
                 return this.largeYellowLine;
+            }
+            if(metadata == 2)
+            {
+                return this.oneSidedBDoubleWhiteLine1;
+            }
+            if(metadata == 10)
+            {
+                return this.oneSidedBDoubleWhiteLine2;
+            }
+            if(metadata == 3)
+            {
+                return this.oneSidedBDoubleYellowLine2;
+            }
+            if(metadata == 11)
+            {
+                return this.oneSidedBDoubleYellowLine1;
+            }
+         }
+        if(side == 4)
+        {
+            if(metadata == 4 || metadata == 8)
+            {
+                return this.largeWhiteLine;
+            }
+            if(metadata == 5 || metadata == 9)
+            {
+                return this.largeYellowLine;
+            }
+            if(metadata == 6)
+            {
+                return this.oneSidedBDoubleWhiteLine1;
+            }
+            if(metadata == 14)
+            {
+                return this.oneSidedBDoubleWhiteLine2;
+            }
+            if(metadata == 7)
+            {
+                return this.oneSidedBDoubleYellowLine2;
+            }
+            if(metadata == 15)
+            {
+                return this.oneSidedBDoubleYellowLine1;
             }
         }
-        if(side == 2 || side == 4)
+        if(side == 5)
         {
-            if(metadata == 8)
+            if(metadata == 0 || metadata == 12)
             {
                 return this.largeWhiteLine;
             }
-            if(metadata == 9)
+            if(metadata == 1 || metadata == 13)
             {
                 return this.largeYellowLine;
             }
-        }
-        if(side == 2 || side == 5)
-        {
-            if(metadata == 12)
+            if(metadata == 6)
             {
-                return this.largeWhiteLine;
+                return this.oneSidedBDoubleWhiteLine2;
             }
-            if(metadata == 13)
+            if(metadata == 14)
             {
-                return this.largeYellowLine;
+                return this.oneSidedBDoubleWhiteLine1;
+            }
+            if(metadata == 7)
+            {
+                return this.oneSidedBDoubleYellowLine1;
+            }
+            if(metadata == 15)
+            {
+                return this.oneSidedBDoubleYellowLine2;
             }
         }
         return this.asphaltBase;
@@ -211,5 +279,4 @@ public class BlockAsphaltCorner2 extends Block
         }
         world.setBlockMetadataWithNotify(x, y, z, meta, 2);
     }
-
 }
