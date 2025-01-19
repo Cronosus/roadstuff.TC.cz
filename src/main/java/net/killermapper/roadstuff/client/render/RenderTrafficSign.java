@@ -100,13 +100,6 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
             {
                 case 0:
 
-                    renderer.setRenderBounds(7 / 16F, 0 / 16F, 9 / 16F, 9 / 16F, signTop / 16F, 10 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-                    renderer.setRenderBounds(7 / 16F, 0 / 16F, 0.5F, 0.46875F, signTop / 16F, 9 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-                    renderer.setRenderBounds(0.53125F, 0 / 16F, 0.5F, 9 / 16F, signTop / 16F, 9 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-
                     if(world.getBlockMetadata(x, y, z) != 0)
                     {
                         switch(tileSign.getSignShape())
@@ -190,7 +183,7 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                 renderer.renderStandardBlock(block, x, y, z);
                                 break;
                             case 5:
-                                if(tileSign.getSignType() == 1 && tileSign.getSignShape() == 5)  //STOP
+                                if(tileSign.getSignType() < 2 && tileSign.getSignShape() == 5)  //STOP
                                 {                        
                                     renderer.setRenderBounds(4 / 16F, 0.0F, 10 / 16F, 12 / 16F, 1 / 16F, 11 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -288,22 +281,21 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(0.0F, 0.0F, 10 / 16F, 1F, 1F, 10 / 16F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                             case 6:
-                                /*  //pismo bez pozadi nejde*/
-                                if(tileSign.getSignType() > 72 && tileSign.getSignType() < 145 && tileSign.getSignShape() == 6)  //vyplnene pismo ctverec
+                                if(tileSign.getSignType() < 73 && tileSign.getSignShape() == 6)  //pismo bez pozadi
+                                {                        
+                                    renderer.setRenderBounds(0.0F, 0.0F, 10 / 16F, 1F, 1F, 10 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
+                                if(tileSign.getSignType() > 72 && tileSign.getSignShape() == 6)  //vyplnene pismo ctverec
                                 {                        
                                     renderer.setRenderBounds(0.0F, 0.0F, 10 / 16F, 1F, 1F, 11 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(0.0F, 0.0F, 10 / 16F, 1F, 1F, 10 / 16F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                             case 7:
-                                if(tileSign.getSignType() >= 1 && tileSign.getSignType() < 7 && tileSign.getSignShape() == 7)  //kriz 1
+                                if(tileSign.getSignType() < 7 && tileSign.getSignShape() == 7)  //kriz 1
                                 {                        
                                     renderer.setRenderBounds(2 / 32F, 6 / 32F, 10 / 16F, 7 / 32F, 7 / 32F, 11 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -476,9 +468,102 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
 
                                     break;
                                 }
-                                /*if(tileSign.getSignType() == 9 && tileSign.getSignShape() == 7)  //kriz 3
+                                if(tileSign.getSignType() == 9 && tileSign.getSignShape() == 7)  //kriz 3
                                 {                        
-                                }*/
+                                    renderer.setRenderBounds(1 / 32F, 4 / 32F, 10 / 16F, 5 / 32F, 5 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(27 / 32F, 4 / 32F, 10 / 16F, 31 / 32F, 5 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(0.0F, 5 / 32F, 10 / 16F, 7 / 32F, 6 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(25 / 32F, 5 / 32F, 10 / 16F, 1F, 6 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(0.0F, 6 / 32F, 10 / 16F, 9 / 32F, 7 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(23 / 32F, 6 / 32F, 10 / 16F, 1F, 7 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(1 / 32F, 7 / 32F, 10 / 16F, 11 / 32F, 8 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(21 / 32F, 7 / 32F, 10 / 16F, 31 / 32F, 8 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(2 / 32F, 8 / 32F, 10 / 16F, 13 / 32F, 9 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(19 / 32F, 8 / 32F, 10 / 16F, 30 / 32F, 9 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(4 / 32F, 9 / 32F, 10 / 16F, 15 / 32F, 10 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(17 / 32F, 9 / 32F, 10 / 16F, 28 / 32F, 10 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(6 / 32F, 10 / 32F, 10 / 16F, 26 / 32F, 11 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(2 / 32F, 11 / 32F, 10 / 16F, 4 / 32F, 12 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(8 / 32F, 11 / 32F, 10 / 16F, 24 / 32F, 12 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(28 / 32F, 11 / 32F, 10 / 16F, 30 / 32F, 12 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(0.0F, 12 / 32F, 10 / 16F, 7 / 32F, 13 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(11 / 32F, 12 / 32F, 10 / 16F, 21 / 32F, 13 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(25 / 32F, 12 / 32F, 10 / 16F, 1F, 13 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(0.0F, 13 / 32F, 10 / 16F, 9 / 32F, 14 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(13 / 32F, 13 / 32F, 10 / 16F, 19 / 32F, 14 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(23 / 32F, 13 / 32F, 10 / 16F, 1F, 14 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(1 / 32F, 14 / 32F, 10 / 16F, 11 / 32F, 15 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(15 / 32F, 14 / 32F, 10 / 16F, 17 / 32F, 15 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(21 / 32F, 14 / 32F, 10 / 16F, 31 / 32F, 15 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(2 / 32F, 15 / 32F, 10 / 16F, 13 / 32F, 16 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(19 / 32F, 15 / 32F, 10 / 16F, 30 / 32F, 16 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(4 / 32F, 16 / 32F, 10 / 16F, 15 / 32F, 17 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(17 / 32F, 16 / 32F, 10 / 16F, 28 / 32F, 17 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(6 / 32F, 17 / 32F, 10 / 16F, 26 / 32F, 18 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(8 / 32F, 18 / 32F, 10 / 16F, 24 / 32F, 19 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 32F, 19 / 32F, 10 / 16F, 22 / 32F, 20 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(8 / 32F, 20 / 32F, 10 / 16F, 24 / 32F, 21 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(6 / 32F, 21 / 32F, 10 / 16F, 26 / 32F, 22 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(4 / 32F, 22 / 32F, 10 / 16F, 15 / 32F, 23 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(17 / 32F, 22 / 32F, 10 / 16F, 28 / 32F, 23 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(2 / 32F, 23 / 32F, 10 / 16F, 13 / 32F, 24 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(19 / 32F, 23 / 32F, 10 / 16F, 30 / 32F, 24 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(1 / 32F, 24 / 32F, 10 / 16F, 11 / 32F, 25 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(21 / 32F, 24 / 32F, 10 / 16F, 31 / 32F, 25 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(0.0F, 25 / 32F, 10 / 16F, 9 / 32F, 26 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(23 / 32F, 25 / 32F, 10 / 16F, 1F, 26 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(0.0F, 26 / 32F, 10 / 16F, 7 / 32F, 27 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(25 / 32F, 26 / 32F, 10 / 16F, 1F, 27 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(1 / 32F, 27 / 32F, 10 / 16F, 5 / 32F, 28 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(27 / 32F, 27 / 32F, 10 / 16F, 31 / 32F, 28 / 32F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
                                 if(tileSign.getSignType() > 9 && tileSign.getSignType() < 23 && tileSign.getSignShape() == 7)  //-4 uzky obdelnik
                                 {                        
                                     renderer.setRenderBounds(4 / 16F, 0.0F, 10 / 16F, 12 / 16F, 1F, 11 / 16F);
@@ -657,17 +742,26 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                if(tileSign.getSignType() > 61 && tileSign.getSignShape() == 7) //-2 uzky obdelnik
+                                if(tileSign.getSignType() > 61 && tileSign.getSignType() < 80 && tileSign.getSignShape() == 7) //-2 uzky obdelnik
                                 {
                                     renderer.setRenderBounds(2 / 16F, 0.0F, 10 / 16F, 14 / 16F, 1F, 11 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(0.0F, 0.0F, 10 / 16F, 1F, 1F, 10 / 16F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
+                                if(tileSign.getSignType() == 80 && tileSign.getSignShape() == 7)  //pulka nahore uzka
+                                {                        
+                                    renderer.setRenderBounds(0.0F, 10 / 16F, 10 / 16F, 1F, 1F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
+                                if(tileSign.getSignType() > 80 && tileSign.getSignShape() == 7)  //pulka nahore
+                                {                        
+                                    renderer.setRenderBounds(1 / 16F, 8 / 16F, 10 / 16F, 15 / 16F, 1F, 11 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
                             case 8:
-                                if(tileSign.getSignType() > 0 && tileSign.getSignType() < 69 && tileSign.getSignShape() == 8)  //kruh
+                                if(tileSign.getSignType() < 69 && tileSign.getSignShape() == 8)  //kruh
                                 {                        
                                     renderer.setRenderBounds(5 / 16F, 0.0F, 10 / 16F, 11 / 16F, 1 / 16F, 11 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -695,21 +789,16 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(0.0F, 0.0F, 10 / 16F, 1F, 1F, 10 / 16F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                          }
                     }
+                    renderer.setRenderBounds(7 / 16F, 0 / 16F, 9 / 16F, 9 / 16F, signTop / 16F, 10 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
+                    renderer.setRenderBounds(7 / 16F, 0 / 16F, 8 / 16F, 7.5 / 16F, signTop / 16F, 9 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
+                    renderer.setRenderBounds(8.5 / 16F, 0 / 16F, 8 / 16F, 9 / 16F, signTop / 16F, 9 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
                     break;
                 case 1:
-
-                    renderer.setRenderBounds(6 / 16F, 0.0F, 7 / 16F, 7 / 16F, signTop / 16F, 9 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-                    renderer.setRenderBounds(7 / 16F, 0.0F, 7 / 16F, 0.5F, signTop / 16F, 0.48F);
-                    renderer.renderStandardBlock(block, x, y, z);
-                    renderer.setRenderBounds(7 / 16F, 0.0F, 0.525F, 0.5F, signTop / 16F, 9 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-
                     if(world.getBlockMetadata(x, y, z) != 0)
                     {
                         switch(tileSign.getSignShape())
@@ -793,7 +882,7 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                 renderer.renderStandardBlock(block, x, y, z);
                                 break;
                             case 5:
-                                if(tileSign.getSignType() == 1 && tileSign.getSignShape() == 5)  //STOP
+                                if(tileSign.getSignType() < 2 && tileSign.getSignShape() == 5)  //STOP
                                 {                        
                                     renderer.setRenderBounds(5 / 16F, 0.0F, 4 / 16F, 6 / 16F, 1 / 16F, 12 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -891,22 +980,21 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(6 / 16F, 0.0F, 0.0F, 6 / 16F, 1F, 1F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                             case 6:
-                                /*  //pismo bez pozadi nejde*/
-                                if(tileSign.getSignType() > 72 && tileSign.getSignType() < 145 && tileSign.getSignShape() == 6)  //ctverec
+                                if(tileSign.getSignType() < 73 && tileSign.getSignShape() == 6)  //pismo bez pozadi
+                                {                        
+                                    renderer.setRenderBounds(6 / 16F, 0.0F, 0.0F, 6 / 16F, 1F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
+                                if(tileSign.getSignType() > 72 && tileSign.getSignShape() == 6)  //pismo ctverec
                                 {                        
                                     renderer.setRenderBounds(5 / 16F, 0.0F, 0.0F, 6 / 16F, 1F, 1F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(6 / 16F, 0.0F, 0.0F, 6 / 16F, 1F, 1F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                             case 7:
-                                if(tileSign.getSignType() >= 1 && tileSign.getSignType() < 7 && tileSign.getSignShape() == 7)  //kriz 1
+                                if(tileSign.getSignType() < 7 && tileSign.getSignShape() == 7)  //kriz 1
                                 {                        
                                     renderer.setRenderBounds(5 / 16F, 6 / 32F, 2 / 32F, 6 / 16F, 7 / 32F, 7 / 32F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -1078,9 +1166,102 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                /*if(tileSign.getSignType() == 9 && tileSign.getSignShape() == 7)  //kriz 3
+                                if(tileSign.getSignType() == 9 && tileSign.getSignShape() == 7)  //kriz 3
                                 {                        
-                                }*/
+                                    renderer.setRenderBounds(5 / 16F, 4 / 32F, 1 / 32F, 6 / 16F, 5 / 32F, 5 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 4 / 32F, 27 / 32F, 6 / 16F, 5 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 5 / 32F, 0.0F, 6 / 16F, 6 / 32F, 7 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 5 / 32F, 25 / 32F, 6 / 16F, 6 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 6 / 32F, 0.0F, 6 / 16F, 7 / 32F, 9 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 6 / 32F, 23 / 32F, 6 / 16F, 7 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 7 / 32F, 1 / 32F, 6 / 16F, 8 / 32F, 11 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 7 / 32F, 21 / 32F, 6 / 16F, 8 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 8 / 32F, 2 / 32F, 6 / 16F, 9 / 32F, 13 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 8 / 32F, 19 / 32F, 6 / 16F, 9 / 32F, 30 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 9 / 32F, 4 / 32F, 6 / 16F, 10 / 32F, 15 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 9 / 32F, 17 / 32F, 6 / 16F, 10 / 32F, 28 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 10 / 32F, 6 / 32F, 6 / 16F, 11 / 32F, 26 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 11 / 32F, 2 / 32F, 6 / 16F, 12 / 32F, 4 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 11 / 32F, 8 / 32F, 6 / 16F, 12 / 32F, 24 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 11 / 32F, 28 / 32F, 6 / 16F, 12 / 32F, 30 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 12 / 32F, 0.0F, 6 / 16F, 13 / 32F, 7 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 12 / 32F, 11 / 32F, 6 / 16F, 13 / 32F, 21 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 12 / 32F, 25 / 32F, 6 / 16F, 13 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 13 / 32F, 0.0F, 6 / 16F, 14 / 32F, 9 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 13 / 32F, 13 / 32F, 6 / 16F, 14 / 32F, 19 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 13 / 32F, 23 / 32F, 6 / 16F, 14 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 14 / 32F, 1 / 32F, 6 / 16F, 15 / 32F, 11 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 14 / 32F, 15 / 32F, 6 / 16F, 15 / 32F, 17 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 14 / 32F, 21 / 32F, 6 / 16F, 15 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 15 / 32F, 2 / 32F, 6 / 16F, 16 / 32F, 13 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 15 / 32F, 19 / 32F, 6 / 16F, 16 / 32F, 30 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 16 / 32F, 4 / 32F, 6 / 16F, 17 / 32F, 15 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 16 / 32F, 17 / 32F, 6 / 16F, 17 / 32F, 28 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 17 / 32F, 6 / 32F, 6 / 16F, 18 / 32F, 26 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 18 / 32F, 8 / 32F, 6 / 16F, 19 / 32F, 24 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 19 / 32F, 10 / 32F, 6 / 16F, 20 / 32F, 22 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 20 / 32F, 8 / 32F, 6 / 16F, 21 / 32F, 24 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 21 / 32F, 6 / 32F, 6 / 16F, 22 / 32F, 26 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 22 / 32F, 4 / 32F, 6 / 16F, 23 / 32F, 15 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 22 / 32F, 17 / 32F, 6 / 16F, 23 / 32F, 28 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 23 / 32F, 2 / 32F, 6 / 16F, 24 / 32F, 13 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 23 / 32F, 19 / 32F, 6 / 16F, 24 / 32F, 30 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 24 / 32F, 1 / 32F, 6 / 16F, 25 / 32F, 11 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 24 / 32F, 21 / 32F, 6 / 16F, 25 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 25 / 32F, 0.0F, 6 / 16F, 26 / 32F, 9 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 25 / 32F, 23 / 32F, 6 / 16F, 26 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 26 / 32F, 0.0F, 6 / 16F, 27 / 32F, 7 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 26 / 32F, 25 / 32F, 6 / 16F, 27 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 27 / 32F, 1 / 32F, 6 / 16F, 28 / 32F, 5 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 16F, 27 / 32F, 27 / 32F, 6 / 16F, 28 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
                                 if(tileSign.getSignType() > 9 && tileSign.getSignType() < 23 && tileSign.getSignShape() == 7)  //-4 uzky obdelnik
                                 {                        
                                     renderer.setRenderBounds(5 / 16F, 0.0F, 4 / 16F, 6 / 16F, 1F, 12 / 16F);
@@ -1259,17 +1440,26 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                if(tileSign.getSignType() > 61 && tileSign.getSignShape() == 7) //-2 uzky obdelnik
+                                if(tileSign.getSignType() > 61 && tileSign.getSignType() < 80 && tileSign.getSignShape() == 7) //-2 uzky obdelnik
                                 {
                                     renderer.setRenderBounds(5 / 16F, 0.0F, 2 / 16F, 6 / 16F, 1F, 14 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(6 / 16F, 0.0F, 0.0F, 6 / 16F, 1F, 1F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
+                                if(tileSign.getSignType() == 80 && tileSign.getSignShape() == 7)  //pulka nahore uzka
+                                {                        
+                                    renderer.setRenderBounds(5 / 16F, 10 / 16F, 0.0F, 6 / 16F, 1F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
+                                if(tileSign.getSignType() > 80 && tileSign.getSignShape() == 7)  //pulka nahore
+                                {                        
+                                    renderer.setRenderBounds(5 / 16F, 8 / 16F, 1 / 16F, 6 / 16F, 1F, 15 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
                             case 8:
-                                if(tileSign.getSignType() > 0 && tileSign.getSignType() < 69 && tileSign.getSignShape() == 8) //kruh
+                                if(tileSign.getSignType() < 69 && tileSign.getSignShape() == 8) //kruh
                                 {                        
                                     renderer.setRenderBounds(5 / 16F, 0.0F, 5 / 16F, 6 / 16F, 1 / 16F, 11 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -1297,21 +1487,16 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(6 / 16F, 0.0F, 0.0F, 6 / 16F, 1F, 1F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                         }
                     }
+                    renderer.setRenderBounds(6 / 16F, 0.0F, 7 / 16F, 7 / 16F, signTop / 16F, 9 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
+                    renderer.setRenderBounds(7 / 16F, 0.0F, 7 / 16F, 8 / 16F, signTop / 16F, 7.5 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
+                    renderer.setRenderBounds(7 / 16F, 0.0F, 8.5 / 16F, 8 / 16F, signTop / 16F, 9 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
                     break;
                 case 2:
-
-                    renderer.setRenderBounds(7 / 16F, 0.0F, 6 / 16F, 9 / 16F, signTop / 16F, 7 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-                    renderer.setRenderBounds(7 / 16F, 0.0F, 7 / 16F, 0.46875F, signTop / 16F, 8 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-                    renderer.setRenderBounds(0.53125F, 0.0F, 7 / 16F, 9 / 16F, signTop / 16F, 8 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-
                     if(world.getBlockMetadata(x, y, z) != 0)
                     {
                         switch(tileSign.getSignShape())
@@ -1395,7 +1580,7 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                 renderer.renderStandardBlock(block, x, y, z);
                                 break;
                             case 5:
-                                if(tileSign.getSignType() == 1 && tileSign.getSignShape() == 5)  //STOP
+                                if(tileSign.getSignType() < 2 && tileSign.getSignShape() == 5)  //STOP
                                 {                        
                                     renderer.setRenderBounds(4 / 16F, 0.0F, 5 / 16F, 12 / 16F, 1 / 16F, 6 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -1449,32 +1634,70 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                /*if(tileSign.getSignType() == 62 && tileSign.getSignShape() == 5)  //bocni trojuhelnik  SVT NEJDE
+                                if(tileSign.getSignType() == 62 && tileSign.getSignShape() == 5)  //bocni trojuhelnik  SVT
                                 {
-                                }*/
+                                    renderer.setRenderBounds(0.0F, 0.0F, 159 / 512F, 1F, 1F, 159 / 512F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(1F, 31 / 32F, 5 / 16F, 31 / 32F, 1 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(31 / 32F, 1F, 5 / 16F, 29 / 32F, 0.0F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(29 / 32F, 31 / 32F, 5 / 16F, 27 / 32F, 1 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(27 / 32F, 30 / 32F, 5 / 16F, 25 / 32F, 2 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(25 / 32F, 29 / 32F, 5 / 16F, 23 / 32F, 3 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(23 / 32F, 28 / 32F, 5 / 16F, 21 / 32F, 4 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(21 / 32F, 27 / 32F, 5 / 16F, 19 / 32F, 5 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(19 / 32F, 26 / 32F, 5 / 16F, 17 / 32F, 6 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(17 / 32F, 25 / 32F, 5 / 16F, 15 / 32F, 7 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(15 / 32F, 24 / 32F, 5 / 16F, 13 / 32F, 8 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(13 / 32F, 23 / 32F, 5 / 16F, 11 / 32F, 9 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(11 / 32F, 22 / 32F, 5 / 16F, 9 / 32F, 10 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(9 / 32F, 21 / 32F, 5 / 16F, 7 / 32F, 11 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(7 / 32F, 20 / 32F, 5 / 16F, 5 / 32F, 12 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(5 / 32F, 19 / 32F, 5 / 16F, 3 / 32F, 13 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(3 / 32F, 18 / 32F, 5 / 16F, 1 / 32F, 14 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(1 / 32F, 17 / 32F, 5 / 16F, 0.0F, 15 / 32F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
                                 if(tileSign.getSignType() > 62 && tileSign.getSignType() < 76 && tileSign.getSignShape() == 5)  //-4 uzky obdelnik
                                 {                        
                                     renderer.setRenderBounds(4 / 16F, 0.0F, 5 / 16F, 12 / 16F, 1F, 6 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(0.0F, 0.0F, 6 / 16F, 1F, 1F, 6 / 16F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                             case 6:
-                                /*  //pismo bez pozadi nejde*/
-                                if(tileSign.getSignType() > 72 && tileSign.getSignType() < 145 && tileSign.getSignShape() == 6)  //ctverec
+                                if(tileSign.getSignType() < 73 && tileSign.getSignShape() == 6)  //pismo bez pozadi
+                                {                        
+                                    renderer.setRenderBounds(0.0F, 0.0F, 6 / 16F, 1F, 1F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
+                                if(tileSign.getSignType() > 72 && tileSign.getSignShape() == 6)  //pismo ctverec
                                 {                        
                                     renderer.setRenderBounds(0.0F, 0.0F, 5 / 16F, 1F, 1F, 6 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(0.0F, 0.0F, 6 / 16F, 1F, 1F, 6 / 16F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                             case 7:
-                                /*if(tileSign.getSignType() >= 1 && tileSign.getSignType() < 7 && tileSign.getSignShape() == 7)  //kriz 1
+                                if(tileSign.getSignType() < 7 && tileSign.getSignShape() == 7)  //kriz 1
                                 {                        
+                                    renderer.setRenderBounds(0.0F, 0.0F, 159 / 512F, 1F, 1F, 159 / 512F);
+                                    renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(2 / 32F, 6 / 32F, 5 / 16F, 7 / 32F, 7 / 32F, 6 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(25 / 32F, 6 / 32F, 5 / 16F, 30 / 32F, 7 / 32F, 6 / 16F);
@@ -1541,6 +1764,8 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                 }
                                 if(tileSign.getSignType() > 6 && tileSign.getSignType() < 9 && tileSign.getSignShape() == 7)  //kriz 2
                                 {                        
+                                    renderer.setRenderBounds(0.0F, 0.0F, 159 / 512F, 1F, 1F, 159 / 512F);
+                                    renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(5 / 32F, 0.0F, 5 / 16F, 6 / 32F, 1 / 32F, 6 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(26 / 32F, 0.0F, 5 / 16F, 27 / 32F, 1 / 32F, 6 / 16F);
@@ -1647,6 +1872,8 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                 }
                                 if(tileSign.getSignType() == 9 && tileSign.getSignShape() == 7)  //kriz 3
                                 {                        
+                                    renderer.setRenderBounds(0.0F, 0.0F, 159 / 512F, 1F, 1F, 159 / 512F);
+                                    renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(1 / 32F, 4 / 32F, 5 / 16F, 5 / 32F, 5 / 32F, 6 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(27 / 32F, 4 / 32F, 5 / 16F, 31 / 32F, 5 / 32F, 6 / 16F);
@@ -1740,7 +1967,7 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.setRenderBounds(27 / 32F, 27 / 32F, 5 / 16F, 31 / 32F, 28 / 32F, 6 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
-                                }*/
+                                }
                                 if(tileSign.getSignType() > 9 && tileSign.getSignType() < 23 && tileSign.getSignShape() == 7)  //-4 uzky obdelnik
                                 {                        
                                     renderer.setRenderBounds(4 / 16F, 0.0F, 5 / 16F, 12 / 16F, 1F, 6 / 16F);
@@ -1919,17 +2146,26 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                if(tileSign.getSignType() > 61 && tileSign.getSignShape() == 7) //-2 uzky obdelnik
+                                if(tileSign.getSignType() > 61 && tileSign.getSignType() < 80 && tileSign.getSignShape() == 7) //-2 uzky obdelnik
                                 {
                                     renderer.setRenderBounds(2 / 16F, 0.0F, 5 / 16F, 14 / 16F, 1F, 6 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(0.0F, 0.0F, 6 / 16F, 1F, 1F, 6 / 16F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
+                                if(tileSign.getSignType() == 80 && tileSign.getSignShape() == 7)  //pulka nahore uzka
+                                {                        
+                                    renderer.setRenderBounds(0.0F, 10 / 16F, 5 / 16F, 1F, 1F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
+                                if(tileSign.getSignType() > 80 && tileSign.getSignShape() == 7)  //pulka nahore
+                                {                        
+                                    renderer.setRenderBounds(1 / 16F, 8 / 16F, 5 / 16F, 15 / 16F, 1F, 6 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
                             case 8:
-                                if(tileSign.getSignType() > 0 && tileSign.getSignType() < 69 && tileSign.getSignShape() == 8) //kruh
+                                if(tileSign.getSignType() < 69 && tileSign.getSignShape() == 8) //kruh
                                 {                        
                                     renderer.setRenderBounds(5 / 16F, 0.0F, 5 / 16F, 11 / 16F, 1 / 16F, 6 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -1957,20 +2193,16 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(0.0F, 0.0F, 6 / 16F, 1F, 1F, 6 / 16F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                         }
                     }
+                    renderer.setRenderBounds(7 / 16F, 0.0F, 6 / 16F, 9 / 16F, signTop / 16F, 7 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
+                    renderer.setRenderBounds(7 / 16F, 0.0F, 7 / 16F, 0.46875F, signTop / 16F, 8 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
+                    renderer.setRenderBounds(0.53125F, 0.0F, 7 / 16F, 9 / 16F, signTop / 16F, 8 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
                     break;
                 case 3:
-                    renderer.setRenderBounds(9 / 16F, 0.0F, 7 / 16F, 10 / 16F, signTop / 16F, 9 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-                    renderer.setRenderBounds(8 / 16F, 0.0F, 7 / 16F, 9 / 16F, signTop / 16F, 7.5 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-                    renderer.setRenderBounds(8 / 16F, 0.0F, 8.5 / 16F, 9 / 16F, signTop / 16F, 9 / 16F);
-                    renderer.renderStandardBlock(block, x, y, z);
-
                     if(world.getBlockMetadata(x, y, z) != 0)
                     {
                         switch(tileSign.getSignShape())
@@ -2054,7 +2286,7 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                 renderer.renderStandardBlock(block, x, y, z);
                                 break;
                             case 5:
-                                if(tileSign.getSignType() == 1 && tileSign.getSignShape() == 5)  //STOP
+                                if(tileSign.getSignType() < 2 && tileSign.getSignShape() == 5)  //STOP
                                 {                        
                                     renderer.setRenderBounds(10 / 16F, 0.0F, 4 / 16F, 11 / 16F, 1 / 16F, 12 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -2107,32 +2339,71 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.setRenderBounds(10 / 16F, 0.0F, 1 / 16F, 11 / 16F, 8 / 16F, 15 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
-                                }/*
-                                if(tileSign.getSignType() == 62 && tileSign.getSignShape() == 5)  //bocni trojuhelnik
-                                {nejde}*/
+                                }
+                                if(tileSign.getSignType() == 62 && tileSign.getSignShape() == 5)  //bocni trojuhelnik  T,V,S
+                                {
+                                    renderer.setRenderBounds(353 / 512F, 0.0F, 0.0F, 353 / 512F, 1F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 31 / 32F, 1F, 11 / 16F, 1 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 1F, 31 / 32F, 11 / 16F, 0.0F, 29 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 31 / 32F, 29 / 32F, 11 / 16F, 1 / 32F, 27 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 30 / 32F, 27 / 32F, 11 / 16F, 2 / 32F, 25 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 29 / 32F, 25 / 32F, 11 / 16F, 3 / 32F, 23 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 28 / 32F, 23 / 32F, 11 / 16F, 4 / 32F, 21 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 27 / 32F, 21 / 32F, 11 / 16F, 5 / 32F, 19 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 26 / 32F, 19 / 32F, 11 / 16F, 6 / 32F, 17 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 25 / 32F, 17 / 32F, 11 / 16F, 7 / 32F, 15 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 24 / 32F, 15 / 32F, 11 / 16F, 8 / 32F, 13 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 23 / 32F, 13 / 32F, 11 / 16F, 9 / 32F, 11 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 22 / 32F, 11 / 32F, 11 / 16F, 10 / 32F, 9 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 21 / 32F, 9 / 32F, 11 / 16F, 11 / 32F, 7 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 20 / 32F, 7 / 32F, 11 / 16F, 12 / 32F, 5 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 19 / 32F, 5 / 32F, 11 / 16F, 13 / 32F, 3 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 18 / 32F, 3 / 32F, 11 / 16F, 14 / 32F, 1 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 17 / 32F, 1 / 32F, 11 / 16F, 15 / 32F, 0.0F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                 }
                                 if(tileSign.getSignType() > 62 && tileSign.getSignType() < 76 && tileSign.getSignShape() == 5)  //-4 uzky obdelnik
                                 {                        
                                     renderer.setRenderBounds(10 / 16F, 0.0F, 4 / 16F, 11 / 16F, 1F, 12 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(10 / 16F, 0.0F, 0.0F, 10 / 16F, 1F, 1F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                             case 6:
-                                /*  //pismo bez pozadi nejde*/
-                                if(tileSign.getSignType() > 72 && tileSign.getSignType() < 145 && tileSign.getSignShape() == 6)  //ctverec
+                                if(tileSign.getSignType() < 73 && tileSign.getSignShape() == 6)  //pismo bez pozadi
+                                {                        
+                                    renderer.setRenderBounds(10 / 16F, 0.0F, 0.0F, 10 / 16F, 1F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
+                                if(tileSign.getSignType() > 72 && tileSign.getSignShape() == 6)  //pismo ctverec
                                 {                        
                                     renderer.setRenderBounds(10 / 16F, 0.0F, 0.0F, 11 / 16F, 1F, 1F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(10 / 16F, 0.0F, 0.0F, 10 / 16F, 1F, 1F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                             case 7:
-                                /*if(tileSign.getSignType() >= 1 && tileSign.getSignType() < 7 && tileSign.getSignShape() == 7)  //kriz 1
+                                if(tileSign.getSignType() < 7 && tileSign.getSignShape() == 7)  //kriz 1
                                 {                        
+                                    renderer.setRenderBounds(353 / 512F, 0.0F, 0.0F, 353 / 512F, 1F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(10 / 16F, 6 / 32F, 2 / 32F, 11 / 16F, 7 / 32F, 7 / 32F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(10 / 16F, 6 / 32F, 25 / 32F, 11 / 16F, 7 / 32F, 30 / 32F);
@@ -2199,6 +2470,8 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                 }
                                 if(tileSign.getSignType() > 6 && tileSign.getSignType() < 9 && tileSign.getSignShape() == 7)  //kriz 2
                                 {                        
+                                    renderer.setRenderBounds(353 / 512F, 0.0F, 0.0F, 353 / 512F, 1F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(10 / 16F, 0.0F, 5 / 32F, 11 / 16F, 1 / 32F, 6 / 32F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     renderer.setRenderBounds(10 / 16F, 0.0F, 26 / 32F, 11 / 16F, 1 / 32F, 27 / 32F);
@@ -2305,7 +2578,102 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                 }
                                 if(tileSign.getSignType() == 9 && tileSign.getSignShape() == 7)  //kriz 3
                                 {                        
-                                }*/
+                                    renderer.setRenderBounds(353 / 512F, 0.0F, 0.0F, 353 / 512F, 1F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 4 / 32F, 1 / 32F, 11 / 16F, 5 / 32F, 5 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 4 / 32F, 27 / 32F, 11 / 16F, 5 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 5 / 32F, 0.0F, 11 / 16F, 6 / 32F, 7 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 5 / 32F, 25 / 32F, 11 / 16F, 6 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 6 / 32F, 0.0F, 11 / 16F, 7 / 32F, 9 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 6 / 32F, 23 / 32F, 11 / 16F, 7 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 7 / 32F, 1 / 32F, 11 / 16F, 8 / 32F, 11 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 7 / 32F, 21 / 32F, 11 / 16F, 8 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 8 / 32F, 2 / 32F, 11 / 16F, 9 / 32F, 13 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 8 / 32F, 19 / 32F, 11 / 16F, 9 / 32F, 30 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 9 / 32F, 4 / 32F, 11 / 16F, 10 / 32F, 15 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 9 / 32F, 17 / 32F, 11 / 16F, 10 / 32F, 28 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 10 / 32F, 6 / 32F, 11 / 16F, 11 / 32F, 26 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 11 / 32F, 2 / 32F, 11 / 16F, 12 / 32F, 4 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 11 / 32F, 8 / 32F, 11 / 16F, 12 / 32F, 24 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 11 / 32F, 28 / 32F, 11 / 16F, 12 / 32F, 30 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 12 / 32F, 0.0F, 11 / 16F, 13 / 32F, 7 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 12 / 32F, 11 / 32F, 11 / 16F, 13 / 32F, 21 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 12 / 32F, 25 / 32F, 11 / 16F, 13 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 13 / 32F, 0.0F, 11 / 16F, 14 / 32F, 9 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 13 / 32F, 13 / 32F, 11 / 16F, 14 / 32F, 19 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 13 / 32F, 23 / 32F, 11 / 16F, 14 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 14 / 32F, 1 / 32F, 11 / 16F, 15 / 32F, 11 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 14 / 32F, 15 / 32F, 11 / 16F, 15 / 32F, 17 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 14 / 32F, 21 / 32F, 11 / 16F, 15 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 15 / 32F, 2 / 32F, 11 / 16F, 16 / 32F, 13 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 15 / 32F, 19 / 32F, 11 / 16F, 16 / 32F, 30 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 16 / 32F, 4 / 32F, 11 / 16F, 17 / 32F, 15 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 16 / 32F, 17 / 32F, 11 / 16F, 17 / 32F, 28 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 17 / 32F, 6 / 32F, 11 / 16F, 18 / 32F, 26 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 18 / 32F, 8 / 32F, 11 / 16F, 19 / 32F, 24 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 19 / 32F, 10 / 32F, 11 / 16F, 20 / 32F, 22 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 20 / 32F, 8 / 32F, 11 / 16F, 21 / 32F, 24 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 21 / 32F, 6 / 32F, 11 / 16F, 22 / 32F, 26 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 22 / 32F, 4 / 32F, 11 / 16F, 23 / 32F, 15 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 22 / 32F, 17 / 32F, 11 / 16F, 23 / 32F, 28 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 23 / 32F, 2 / 32F, 11 / 16F, 24 / 32F, 13 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 23 / 32F, 19 / 32F, 11 / 16F, 24 / 32F, 30 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 24 / 32F, 1 / 32F, 11 / 16F, 25 / 32F, 11 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 24 / 32F, 21 / 32F, 11 / 16F, 25 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 25 / 32F, 0.0F, 11 / 16F, 26 / 32F, 9 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 25 / 32F, 23 / 32F, 11 / 16F, 26 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 26 / 32F, 0.0F, 11 / 16F, 27 / 32F, 7 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 26 / 32F, 25 / 32F, 11 / 16F, 27 / 32F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 27 / 32F, 1 / 32F, 11 / 16F, 28 / 32F, 5 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    renderer.setRenderBounds(10 / 16F, 27 / 32F, 27 / 32F, 11 / 16F, 28 / 32F, 31 / 32F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
                                 if(tileSign.getSignType() > 9 && tileSign.getSignType() < 23 && tileSign.getSignShape() == 7)  //-4 uzky obdelnik
                                 {                        
                                     renderer.setRenderBounds(10 / 16F, 0.0F, 4 / 16F, 11 / 16F, 1F, 12 / 16F);
@@ -2484,17 +2852,26 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                if(tileSign.getSignType() > 61 && tileSign.getSignShape() == 7) //-2 uzky obdelnik
+                                if(tileSign.getSignType() > 61 && tileSign.getSignType() < 80 && tileSign.getSignShape() == 7) //-2 uzky obdelnik
                                 {
                                     renderer.setRenderBounds(10 / 16F, 0.0F, 2 / 16F, 11 / 16F, 1F, 14 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(10 / 16F, 0.0F, 0.0F, 10 / 16F, 1F, 1F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
+                                if(tileSign.getSignType() == 80 && tileSign.getSignShape() == 7)  //pulka nahore uzka
+                                {                        
+                                    renderer.setRenderBounds(10 / 16F, 10 / 16F, 0.0F, 11 / 16F, 1F, 1F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
+                                if(tileSign.getSignType() > 80 && tileSign.getSignShape() == 7)  //pulka nahore
+                                {                        
+                                    renderer.setRenderBounds(10 / 16F, 8 / 16F, 1 / 16F, 11 / 16F, 1F, 15 / 16F);
+                                    renderer.renderStandardBlock(block, x, y, z);
+                                    break;
+                                }
                             case 8:
-                                if(tileSign.getSignType() > 0 && tileSign.getSignType() < 69 && tileSign.getSignShape() == 8) //kruh
+                                if(tileSign.getSignType() < 69 && tileSign.getSignShape() == 8) //kruh
                                 {                        
                                     renderer.setRenderBounds(10 / 16F, 0.0F, 5 / 16F, 11 / 16F, 1 / 16F, 11 / 16F);
                                     renderer.renderStandardBlock(block, x, y, z);
@@ -2522,11 +2899,14 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
                                     renderer.renderStandardBlock(block, x, y, z);
                                     break;
                                 }
-                                renderer.setRenderBounds(10 / 16F, 0.0F, 0.0F, 10 / 16F, 1F, 1F);
-                                renderer.renderStandardBlock(block, x, y, z);
-                                break;
                         }
                     }
+                    renderer.setRenderBounds(9 / 16F, 0.0F, 7 / 16F, 10 / 16F, signTop / 16F, 9 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
+                    renderer.setRenderBounds(8 / 16F, 0.0F, 7 / 16F, 9 / 16F, signTop / 16F, 7.5 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
+                    renderer.setRenderBounds(8 / 16F, 0.0F, 8.5 / 16F, 9 / 16F, signTop / 16F, 9 / 16F);
+                    renderer.renderStandardBlock(block, x, y, z);
                     break;
                 default:
 
@@ -2676,18 +3056,6 @@ public class RenderTrafficSign implements ISimpleBlockRenderingHandler
         tessellator.startDrawingQuads();
         tessellator.setNormal(1.0F, 0.0F, 0.0F);
         renderer.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, block.getIcon(5, metadata));
-        tessellator.draw();
-        tessellator.startDrawingQuads();
-        tessellator.setNormal(1.0F, 0.0F, 0.0F);
-        renderer.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, block.getIcon(6, metadata));
-        tessellator.draw();
-        tessellator.startDrawingQuads();
-        tessellator.setNormal(1.0F, 0.0F, 0.0F);
-        renderer.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, block.getIcon(7, metadata));
-        tessellator.draw();
-        tessellator.startDrawingQuads();
-        tessellator.setNormal(1.0F, 0.0F, 0.0F);
-        renderer.renderFaceXPos(block, 0.0D, 0.0D, 0.0D, block.getIcon(8, metadata));
         tessellator.draw();
         GL11.glTranslatef(0.5F, 0.5F, 0.5F);
     }
