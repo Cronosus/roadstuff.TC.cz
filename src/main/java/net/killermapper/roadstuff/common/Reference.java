@@ -12,9 +12,9 @@ public class Reference
     public static final short maxSignMiscB = 7;
     public static final short maxSignLetter = 145;
     public static final short maxSignLetterB = 3;
-    public static final short maxSignTrain = 80;
-    public static final short maxSignTrainB = 13;
+    public static final short maxSignTrain = 83;
+    public static final short maxSignTrainB = 15;
     public static final short maxSignSpeed = 137;
     public static final short maxSignSpeedB = 3;
-    public static final String version = "1.0.3a-TC.cz-custom";
+    public static final String version = "1.0.3c-TC.cz-custom";
 }
