@@ -72,7 +72,7 @@ public class BlockTrafficSign extends Block
     private IIcon signTrainB[] = new IIcon[Reference.maxSignTrainB];
     private IIcon signSpeed[] = new IIcon[Reference.maxSignSpeed];
     private IIcon signSpeedB[] = new IIcon[Reference.maxSignSpeedB];
-    private IIcon signPost, signBase, signError, Misc62a, Misc5Ba;
+    private IIcon signPost, signBase, signError, Misc5Ba;
 
     public BlockTrafficSign()
     {
@@ -157,7 +157,6 @@ public class BlockTrafficSign extends Block
         this.signPost = iconRegister.registerIcon(RoadStuff.MODID + ":sign/signPost");
         this.signBase = iconRegister.registerIcon(RoadStuff.MODID + ":sign/signBase");
         this.signError = iconRegister.registerIcon(RoadStuff.MODID + ":sign/signError");
-        this.Misc62a = iconRegister.registerIcon(RoadStuff.MODID + ":sign/misc/misc62a");
         this.Misc5Ba = iconRegister.registerIcon(RoadStuff.MODID + ":sign/misc/misc5Ba");
     }
 
@@ -214,7 +213,7 @@ public class BlockTrafficSign extends Block
                     if(side == signBack)
                     {
                         if(type == 0)
-                            return this.signBase;
+                            return this.signPost;
 
                     }
                     if(shape == 5)
@@ -231,8 +230,6 @@ public class BlockTrafficSign extends Block
                             return this.signMiscB[5];
                         if(type == 62 && (direction == 2 || direction == 3))
                             return this.Misc5Ba;
-                        /*if(type == 62)
-                            return this.signMiscB[5];*/
                         if(type > 62)
                             return this.signMiscB[6];
                     }
@@ -267,8 +264,12 @@ public class BlockTrafficSign extends Block
                             return this.signTrainB[10];
                         if(type == 61)
                             return this.signTrainB[11];
-                        if(type > 61)
+                        if(type >= 62 && type <= 79)
                             return this.signTrainB[12];
+                        if(type == 80)
+                            return this.signTrainB[13];
+                        if(type > 80)
+                            return this.signTrainB[14];
                     }
                     if(shape == 8)
                     {
@@ -286,8 +287,6 @@ public class BlockTrafficSign extends Block
  
                     if(type == 0)
                         return this.signBase;
-                /*if(shape == 5 && type == 62 && (direction == 2 || direction == 3))
-                        return this.Misc62a;*/
 
                     switch(shape)
                     {
