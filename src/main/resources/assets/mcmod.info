@@ -1,0 +1,16 @@
+[
+{
+  "modid": "roadstuff",
+  "name": "Traincraft.cz's Road Stuff",
+  "description": "Traincraft.cz's Road Stuff brings everything you needs for your road dreams in Minecraft.",
+  "version": "1.0.3c-TC.cz-custom",
+  "mcversion": "1.7.10",
+  "url": "www.traincraft.eu",
+  "updateUrl": "",
+  "authorList": ["KillerMapper, CronosusCZ"],
+  "credits": "Original creator KillerMapper, MinecraftForgeFrance, BrokenSwing, everyone who worked on Forge, Kofola45cz for added textures.",
+  "logoFile": "assets/roadstuff/textures/gui/logo.png",
+  "screenshots": [],
+  "dependencies": []
+}
+]
